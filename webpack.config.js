@@ -1,21 +1,23 @@
 module.exports = {
-  entry: './index.js',
+  entry: './main.js',
   output: {
-    filename: 'bundle.js'
+    path: __dirname,
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
-        }
+          presets: ['react', 'es2015', 'stage-0'],
+        },
       },
-      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
-    ]
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.json']
-  }
+    extensions: ['.js', '.json'],
+  },
 };
