@@ -14,7 +14,7 @@ import Contacto from './views/Contacto';
 
 const app = document.getElementById('content'); //eslint-disable-line
 const history = createBrowserHistory();
-console.log('historia', history);
+
 render(
   <Router history={ history }>
     <Route path="/" component={ Inicio } />

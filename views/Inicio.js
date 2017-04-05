@@ -1,7 +1,10 @@
-import React, { Component } from "react";
+import React from 'react';
 
-const Inicio = () => {
-  return <h1>Inicio</h1>;
+const Inicio = ({ children }) => {
+  return <div>
+    <header><h1>Cabecera</h1></header>
+    <main>{ children }</main>
+  </div>;
 };
 
 export default Inicio;

@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "harp server --port $PORT",
-    "heroku-postbuild": "webpack --progress --colors"
+    "build": "webpack --display-error-details --bail",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "babel-core": "^6.24.0",
@@ -19,6 +20,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3"
   },
