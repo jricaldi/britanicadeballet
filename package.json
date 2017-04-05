@@ -1,0 +1,15 @@
+{
+  "name": "britanicadeballet",
+  "version": "1.0.0",
+  "repository": "https://github.com/jricaldi/britanicadeballet.git",
+  "author": "jricaldi <jorge.ricaldi@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "harp server --port $PORT",
+    "postinstall": "echo I can run webpack here!"
+  },
+  "dependencies": {
+    "harp": "^0.23.0",
+    "webpack": "^2.3.3"
+  }
+}
