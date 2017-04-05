@@ -5,24 +5,25 @@
   "author": "jricaldi <jorge.ricaldi@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "npm run build && npm run start",
+    "build": "webpack --progress --display-error-details --bail",
     "start": "harp server --port $PORT",
-    "build": "webpack --display-error-details --bail",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "harp": "^0.23.0",
+    "history": "^4.6.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router-dom": "^4.0.0",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.22.0",
-    "harp": "^0.23.0",
-    "history": "^4.6.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-router": "^4.0.0",
-    "react-router-dom": "^4.0.0",
+    "webpack": "^2.3.3",
     "url-loader": "^0.5.8",
-    "webpack": "^2.3.3"
+    "file-loader": "^0.11.1"
   },
   "devDependencies": {
     "eslint": "^3.19.0",
