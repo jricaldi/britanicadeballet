@@ -1,8 +1,9 @@
 import React from 'react';
+import Header from './common/Header';
 
 const Inicio = ({ children }) => {
   return <div>
-    <header><h1>Cabecera</h1></header>
+    <Header />
     <main>{ children }</main>
   </div>;
 };
