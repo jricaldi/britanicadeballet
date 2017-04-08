@@ -20,5 +20,6 @@ module.exports = {
       "import/prefer-default-export": 0,
       "react/jsx-wrap-multilines": 0,
       "react/prop-types": 0,
+      "react/no-unknown-property": [0, { ignore: ['class', 'for'] }],
     },
 };
