@@ -1,0 +1,23 @@
+{
+  "presets": [
+    ["env", {
+      "module": false,
+      "targets": {
+        "node": "current"
+      }
+    }],
+    "react",
+    ["es2015", {
+      "modules": false
+    }],
+    "stage-0"
+  ],
+  "plugins": [
+    "react-hot-loader/babel"
+  ],
+  "ignore": [
+    "node_modules/**/*.js",
+    "server/bundles/**/*.js",
+    "server/bin/**/*.js"
+  ]
+}

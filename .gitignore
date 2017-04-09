@@ -1,6 +1,4 @@
 node_modules
-src/bundle.js
-src/bundle.js.map
-src/bundle.css
-src/bundle.css.map
+client/bundles
+server/bundles
 npm-debug.log

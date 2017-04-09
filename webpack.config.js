@@ -6,20 +6,33 @@ const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
 
+const clientPath = path.join(__dirname, 'client');
+
+const entryBasic = [
+  'react-hot-loader/patch',
+  'webpack-dev-server/client?http://localhost:3000',
+  'webpack/hot/only-dev-server',
+];
+
 const commonPlugins = [
   new ExtractTextPlugin({
     filename: 'bundle.css',
-    publicPath: path.join(__dirname, 'src'),
+    publicPath: clientPath,
   }),
 ];
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
-  devtool: debug && 'sourcemap',
-  entry: './main.js',
+  context: clientPath,
+  devtool: debug && 'inline-source-map',
+  entry: debug ? entryBasic.concat('./main.js') : ['babel-polyfill', './main.js'],
   output: {
-    path: path.join(__dirname, 'src'),
+    path: path.join(clientPath, 'bundles'),
     filename: 'bundle.js',
+  },
+  devServer: {
+    hot: debug,
+    contentBase: path.join(clientPath, 'bundles'),
+    publicPath: clientPath,
   },
   module: {
     noParse: /jquery/,
@@ -87,7 +100,7 @@ module.exports = {
   },
   plugins: debug
     ? commonPlugins.concat([
-
+      new webpack.HotModuleReplacementPlugin(),
     ])
     : commonPlugins.concat([
       new webpack.optimize.UglifyJsPlugin({

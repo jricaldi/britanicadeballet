@@ -5,12 +5,12 @@ import {
   Route,
 } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import Inicio from './views/Inicio';
-import QuienesSomos from './views/QuienesSomos';
-import Clases from './views/Clases';
-import Profesoras from './views/Profesoras';
-import Horarios from './views/Horarios';
-import Contacto from './views/Contacto';
+import Inicio from './views/components/Inicio';
+import QuienesSomos from './views/components/QuienesSomos';
+import Clases from './views/components/Clases';
+import Profesoras from './views/components/Profesoras';
+import Horarios from './views/components/Horarios';
+import Contacto from './views/components/Contacto';
 
 const history = createBrowserHistory();
 
