@@ -5,16 +5,18 @@
   "author": "jricaldi <jorge.ricaldi@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon bin/server.js",
+    "dev": "forever bin/server.js -w",
     "build-client": "webpack --progress --display-error-details --bail",
-    "build-server": "babel server --out-file server/bundles/server.js",
-    "start": "node server/bundles/server.js",
+    "build-server": "babel server --out-file server/bundles/server.js --minified=true",
+    "start": "forever server/bundles/server.js",
     "clean": "npm prune --production",
     "build-app": "npm run build-server && npm run build-client",
     "heroku-postbuild": "npm run build-app && npm run clean"
   },
   "dependencies": {
     "babel-cli": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "forever": "^0.15.3",
     "history": "^4.6.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
@@ -48,6 +50,7 @@
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-hot-middleware": "^2.18.0"
   }
 }

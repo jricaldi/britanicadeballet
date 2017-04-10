@@ -6,11 +6,12 @@ const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
 
+const port = process.env.PORT;
 const clientPath = path.join(__dirname, 'client');
 
 const entryBasic = [
   'react-hot-loader/patch',
-  'webpack-dev-server/client?http://localhost:3000',
+  'webpack-dev-server/client?http://localhost:' + port,
   'webpack/hot/only-dev-server',
 ];
 
@@ -44,9 +45,10 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['react', 'es2015', 'stage-0'],
+              presets: ['env', 'react'],
               plugins: [
                 'react-html-attrs',
+                ["transform-object-rest-spread", { "useBuiltIns": true }],
               ],
             },
           },
