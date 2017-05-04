@@ -6,7 +6,7 @@ const Inicio = ({ children }) => {
   return <div>
     <Header />
     <main>{ children }</main>
-    <h1 class="title"> hola mama!</h1>
+    <h1 class="title"> hola papa xD!</h1>
   </div>;
 };
 

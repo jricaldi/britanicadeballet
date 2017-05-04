@@ -2,12 +2,14 @@ const debug = process.env.NODE_ENV !== 'production';
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
 
 const port = process.env.PORT;
 const clientPath = path.join(__dirname, 'client');
+const staticPath = path.join(__dirname, 'static');
 
 const entryBasic = [
   'react-hot-loader/patch',
@@ -17,8 +19,12 @@ const entryBasic = [
 
 const commonPlugins = [
   new ExtractTextPlugin({
-    filename: 'bundle.css',
-    publicPath: clientPath,
+    filename: '[hash]-bundle.css',
+  }),
+  new HtmlWebpackPlugin({
+    title: 'Britanica de Ballet',
+    template: 'layout/index.html',
+    filename: 'index.html',
   }),
 ];
 
@@ -27,13 +33,13 @@ module.exports = {
   devtool: debug && 'inline-source-map',
   entry: debug ? entryBasic.concat('./main.js') : ['babel-polyfill', './main.js'],
   output: {
-    path: path.join(clientPath, 'bundles'),
-    filename: 'bundle.js',
+    path: path.join(staticPath, 'bundles'),
+    filename: '[hash]-bundle.js',
+    publicPath: './bundles',
   },
   devServer: {
     hot: debug,
-    contentBase: path.join(clientPath, 'bundles'),
-    publicPath: clientPath,
+    contentBase: path.join(staticPath, 'bundles'),
   },
   module: {
     noParse: /jquery/,
