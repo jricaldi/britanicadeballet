@@ -1,4 +1,4 @@
 node_modules
-client/bundles
+static/bundles
 server/bundles
 npm-debug.log

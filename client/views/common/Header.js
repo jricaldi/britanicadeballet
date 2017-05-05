@@ -2,15 +2,17 @@ import React from 'react';
 import './header.scss';
 
 const Header = () =>
-  <nav>
-    <div class="nav-wrapper header">
-      <a href="/jorge" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
+  <header>
+    <a href="/" id="logo"><img src="images/logo.png" alt="Britanica de ballet" /></a>
+    <nav>
+      <ul>
+        <li><a href="/quienes-somos">Quienes Somos</a></li>
+        <li><a href="/clases">Clases</a></li>
+        <li><a href="/profesoras">Profesoras</a></li>
+        <li><a href="/horarios">Horarios</a></li>
+        <li><a href="/contacto">Contactos</a></li>
       </ul>
-    </div>
-  </nav>;
+    </nav>
+  </header>;
 
 export default Header;

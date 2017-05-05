@@ -1,4 +1,54 @@
-.header {
-  background-color: red;
-  border-radius: 5px;
+@import 'general.scss';
+
+html, body {
+  background-color: #fafafa;
+  font-family: $font2, serif;
+}
+
+a, ul, nav, header, h1, h2, h3, h4, h5, h6 {
+  font-family: $font1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 75px;
+  padding: 30px 0;
+  #logo {
+    padding-left: 5%;
+    width: 20%;
+    height: 100%;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+
+nav {
+  width: 80%;
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $color1;
+        text-transform: uppercase;
+        transition: color 1s;
+
+        &:hover {
+          color: $color2;
+        }
+      }
+
+    }
+  }
 }
