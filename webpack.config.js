@@ -7,7 +7,7 @@ const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const clientPath = path.join(__dirname, 'client');
 const staticPath = path.join(__dirname, 'static');
 
