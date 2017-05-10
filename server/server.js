@@ -8,7 +8,7 @@ import webpackConfig from '../webpack.config';
 
 const debug = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3000;
-const clientPath = path.resolve(__dirname, '../client');
+// const clientPath = path.resolve(__dirname, '../client');
 const staticPath = path.join(__dirname, '../static');
 
 const app = express();
@@ -23,12 +23,14 @@ app.use((req, res) => {
 
 if (debug) {
   app.use(webpackDevMiddleware(compiler, {
-    publicPath: clientPath,
+    contentBase: path.join(staticPath, 'bundles'),
+    publicPath: '/',
     stats: {
       colors: true,
     },
   }));
-  console.log(webpackHotMiddleware(compiler));
+  console.log('que es esto!');
+  // console.log(webpackHotMiddleware(compiler));
 }
 
 app.listen(PORT, () => {

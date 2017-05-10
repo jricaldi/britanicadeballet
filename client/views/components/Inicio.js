@@ -1,10 +1,9 @@
 import React from 'react';
-import Header from '../common/Header';
 import './views.scss';
 
-const Inicio = ({ children }) => {
+const Inicio = () => {
   return <div>
-        asdasd
+        Hola mundo je
   </div>;
 };
 
