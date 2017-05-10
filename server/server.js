@@ -1,5 +1,3 @@
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
 import express from 'express';
 import webpack from 'webpack';
 import serveStatic from 'serve-static';
@@ -8,31 +6,44 @@ import webpackConfig from '../webpack.config';
 
 const debug = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3000;
-// const clientPath = path.resolve(__dirname, '../client');
-const staticPath = path.join(__dirname, '../static');
+
+const staticPath = path.resolve(__dirname, '../static');
 
 const app = express();
 const compiler = webpack(webpackConfig);
 
-app.use(serveStatic(staticPath));
-
-app.use((req, res) => {
-  res.sendFile(`${staticPath}/bundles/index.html`);
-});
-
 
 if (debug) {
-  app.use(webpackDevMiddleware(compiler, {
-    contentBase: path.join(staticPath, 'bundles'),
-    publicPath: '/',
+  const serverOptions = {
+    contentBase: webpackConfig.output.path,
+    quiet: true,
+    noInfo: true,
+    hot: true,
+    inline: true,
+    lazy: false,
+    publicPath: webpackConfig.output.publicPath,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+    },
     stats: {
       colors: true,
     },
-  }));
-  console.log('que es esto!');
-  // console.log(webpackHotMiddleware(compiler));
+  };
+  const middleware = require('webpack-dev-middleware')(compiler, serverOptions); //eslint-disable-line
+
+  app.use(middleware);
+  app.use(require('webpack-hot-middleware')(compiler)); //eslint-disable-line
+  app.get('*', (req, res) => {
+    res.write(middleware.fileSystem.readFileSync(`${webpackConfig.output.path}/index.html`));
+    res.end();
+  });
+} else {
+  app.use(serveStatic(staticPath));
+  app.get('*', (req, res) => {
+    res.sendFile(`${webpackConfig.output.path}/index.html`);
+  });
 }
 
 app.listen(PORT, () => {
-  console.log('Running Britanica de Ballet app');
+  console.log(` 🌎  Running Britanica de Ballet app on PORT = ${PORT}`);
 });

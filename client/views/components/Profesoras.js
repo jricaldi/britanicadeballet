@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import './profesoras.scss';
 
 const Profesoras = () => {
@@ -8,7 +8,7 @@ const Profesoras = () => {
         <img src="images/profesora-diana.jpg" alt="Diana Untiveros" />
       </div>
       <div class="info">
-        <h2>Diana Untiveros Villa</h2>
+        <h2>Diana Untiveros</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco

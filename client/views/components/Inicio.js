@@ -3,7 +3,7 @@ import './views.scss';
 
 const Inicio = () => {
   return <div>
-        Hola mundo je
+        Hola mundo jojojo
   </div>;
 };
 

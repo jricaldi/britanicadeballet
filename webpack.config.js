@@ -5,31 +5,23 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const port = process.env.PORT || 3000;
-const clientPath = path.join(__dirname, 'client');
-const staticPath = path.join(__dirname, 'static');
+const staticPath = path.resolve('./static');
+const bundlePath = path.resolve(staticPath, 'bundles');
 
 const entryBasic = [
-  'react-hot-loader/patch',
-  `webpack-dev-server/client?http://localhost:${port}`,
-  'webpack/hot/only-dev-server',
+  'webpack-hot-middleware/client?reload=true',
 ];
-
 module.exports = {
-  context: clientPath,
+  context: path.resolve('./client'),
   devtool: 'inline-source-map',
   entry: entryBasic.concat('./main.js'),
   output: {
-    path: path.join(staticPath, 'bundles'),
+    path: bundlePath,
     filename: '[hash]-bundle.js',
     publicPath: '/',
-  },
-  devServer: {
-    hot: true,
-    contentBase: path.join(staticPath, 'bundles'),
-    publicPath: '/',
-    port: port,
   },
   module: {
     noParse: /jquery/,
@@ -44,7 +36,7 @@ module.exports = {
               presets: ['env', 'react'],
               plugins: [
                 'react-html-attrs',
-                ["transform-object-rest-spread", { "useBuiltIns": true }],
+                ['transform-object-rest-spread', { useBuiltIns: true }],
               ],
             },
           },
@@ -77,17 +69,6 @@ module.exports = {
           fallback: 'style-loader',
         }),
       },
-      {
-        test: /\.(png|jpg)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
     ],
   },
   externals: {
@@ -97,15 +78,25 @@ module.exports = {
     extensions: ['.js', '.json'],
   },
   plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin(),
-      new ExtractTextPlugin({
-        filename: '[hash]-bundle.css',
-      }),
-      new HtmlWebpackPlugin({
-        title: 'Britanica de Ballet',
-        template: 'layout/index.html',
-        filename: 'index.html',
-      }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new ExtractTextPlugin({
+      filename: '[hash]-bundle.css',
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Britanica de Ballet',
+      template: 'layout/index.html',
+      filename: 'index.html',
+    }),
+    new CopyWebpackPlugin([{
+      from: staticPath,
+      to: bundlePath,
+    }]),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      pngquant: {
+        quality: '95-100',
+      },
+    }),
   ],
 };

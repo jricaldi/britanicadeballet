@@ -16,6 +16,7 @@ module.exports = {
       "no-console": 0,
       "strict": 0,
       "max-len": 0,
+      "global-require": 2,
       "no-unused-expressions": 0,
       "no-underscore-dangle": 0,
       'import/extensions': ['off', 'never'],
