@@ -15,5 +15,6 @@
     "node_modules/**/*.js",
     "server/bundles/**/*.js",
     "server/bin/**/*.js"
-  ]
+  ],
+  "minified": true
 }

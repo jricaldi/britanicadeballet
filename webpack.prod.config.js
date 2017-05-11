@@ -5,18 +5,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const clientPath = path.join(__dirname, 'client');
-const staticPath = path.join(__dirname, 'static');
+const staticPath = path.resolve('./static');
+const bundlePath = path.resolve(staticPath, 'bundles');
 
 module.exports = {
-  context: clientPath,
+  context: path.resolve('./client'),
   devtool: false,
   entry: './main.js',
   output: {
-    path: path.join(staticPath, 'bundles'),
+    path: bundlePath,
     filename: '[hash]-bundle.js',
-    publicPath: './bundles',
+    publicPath: '/',
   },
   module: {
     noParse: /jquery/,
@@ -64,17 +67,6 @@ module.exports = {
           fallback: 'style-loader',
         }),
       },
-      {
-        test: /\.(png|jpg)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-        ],
-      },
     ],
   },
   externals: {
@@ -91,6 +83,17 @@ module.exports = {
       title: 'Britanica de Ballet',
       template: 'layout/index.html',
       filename: 'index.html',
+    }),
+    new CopyWebpackPlugin([{
+      from: staticPath,
+      to: bundlePath,
+    }]),
+    new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/logo.png`)),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      pngquant: {
+        quality: '95-100',
+      },
     }),
     new webpack.optimize.UglifyJsPlugin({
       sourcemap: false,
