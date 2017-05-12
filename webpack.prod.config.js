@@ -9,17 +9,17 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const staticPath = path.resolve('./static');
+const staticPath = path.resolve(__dirname, 'static');
 const bundlePath = path.resolve(staticPath, 'bundles');
 
 module.exports = {
-  context: path.resolve('./client'),
+  context: path.resolve('client'),
   devtool: false,
   entry: './main.js',
   output: {
     path: bundlePath,
     filename: '[hash]-bundle.js',
-    publicPath: '/',
+    publicPath: '/bundles',
   },
   module: {
     noParse: /jquery/,
@@ -95,8 +95,12 @@ module.exports = {
         quality: '95-100',
       },
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
     new webpack.optimize.UglifyJsPlugin({
-      sourcemap: false,
       compress: {
         warnings: false,
       },

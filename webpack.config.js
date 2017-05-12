@@ -5,10 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-
 
 const staticPath = path.resolve('./static');
 const bundlePath = path.resolve(staticPath, 'bundles');
@@ -17,7 +14,7 @@ const basicEntry = [
   'webpack-hot-middleware/client?reload=true',
 ];
 module.exports = {
-  context: path.resolve('./client'),
+  context: path.resolve('client'),
   devtool: 'inline-source-map',
   entry: basicEntry.concat('./main.js'),
   output: {
@@ -94,12 +91,5 @@ module.exports = {
       from: staticPath,
       to: bundlePath,
     }]),
-    new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/logo.png`)),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      pngquant: {
-        quality: '95-100',
-      },
-    }),
   ],
 };
