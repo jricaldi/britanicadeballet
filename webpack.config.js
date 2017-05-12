@@ -7,19 +7,21 @@ const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const staticPath = path.resolve('./static');
-const bundlePath = path.resolve(staticPath, 'bundles');
+const clientPath = path.resolve('client');
+const staticPath = path.resolve('static');
+const distPath = path.resolve(__dirname, 'dist');
 
 const basicEntry = [
   'webpack-hot-middleware/client?reload=true',
 ];
+
 module.exports = {
-  context: path.resolve('client'),
+  context: clientPath,
   devtool: 'inline-source-map',
   entry: basicEntry.concat('./main.js'),
   output: {
-    path: bundlePath,
-    filename: '[hash]-bundle.js',
+    path: distPath,
+    filename: '[hash]-[name].js',
     publicPath: '/',
   },
   module: {
@@ -89,7 +91,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       from: staticPath,
-      to: bundlePath,
+      to: distPath,
     }]),
   ],
 };

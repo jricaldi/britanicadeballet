@@ -39,6 +39,7 @@ if (debug) {
   });
 } else {
   app.use(serveStatic(staticPath));
+  app.use(serveStatic(webpackConfig.output.path));
   app.get('*', (req, res) => {
     res.sendFile(`${webpackConfig.output.path}/index.html`);
   });

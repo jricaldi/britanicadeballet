@@ -9,17 +9,18 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const staticPath = path.resolve(__dirname, 'static');
-const bundlePath = path.resolve(staticPath, 'bundles');
+const clientPath = path.resolve('client');
+const staticPath = path.resolve('static');
+const distPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
-  context: path.resolve('client'),
+  context: clientPath,
   devtool: false,
   entry: './main.js',
   output: {
-    path: bundlePath,
-    filename: '[hash]-bundle.js',
-    publicPath: '/bundles',
+    path: distPath,
+    filename: '[hash]-[name].js',
+    publicPath: '/',
   },
   module: {
     noParse: /jquery/,
@@ -86,7 +87,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       from: staticPath,
-      to: bundlePath,
+      to: distPath,
     }]),
     new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/logo.png`)),
     new ImageminPlugin({
