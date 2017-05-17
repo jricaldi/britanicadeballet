@@ -1,14 +1,15 @@
-import React from "react";
+import React from 'react';
+import profesoraDiana from '../../../static/images/profesora-diana.jpg';
 import './profesoras.scss';
 
 const Profesoras = () => {
   return <div class="list-profesoras">
     <div class="profesora">
       <div class="foto">
-        <img src="images/profesora-diana.jpg" alt="Diana Untiveros" />
+        <img src={ profesoraDiana } alt="Diana Untiveros" />
       </div>
       <div class="info">
-        <h2>Diana Untiveros</h2>
+        <h2>Diana Untiveros Villa</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco

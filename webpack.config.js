@@ -5,10 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const clientPath = path.resolve('client');
-const staticPath = path.resolve('static');
 const distPath = path.resolve(__dirname, 'dist');
 
 const basicEntry = [
@@ -70,6 +68,13 @@ module.exports = {
           fallback: 'style-loader',
         }),
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          'url-loader?limit=10000',
+          'img-loader',
+        ],
+      },
     ],
   },
   externals: {
@@ -89,9 +94,5 @@ module.exports = {
       template: 'layout/index.html',
       filename: 'index.html',
     }),
-    new CopyWebpackPlugin([{
-      from: staticPath,
-      to: distPath,
-    }]),
   ],
 };
