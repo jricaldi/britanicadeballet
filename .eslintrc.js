@@ -14,6 +14,7 @@ module.exports = {
       "arrow-parens": [2, "as-needed"],
       "react/no-danger": 0,
       "no-console": 0,
+      "no-multi-str": 0,
       "strict": 0,
       "max-len": 0,
       "global-require": 2,
@@ -25,5 +26,6 @@ module.exports = {
       "react/jsx-wrap-multilines": 0,
       "react/prop-types": 0,
       "react/no-unknown-property": [0, { ignore: ['class', 'for'] }],
+      "react/no-array-index-key": 0,
     },
 };

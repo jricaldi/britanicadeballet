@@ -5,8 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
 const postcssCss = require('precss');
 const autoprefixer = require('autoprefixer');
-const ImageminPlugin = require('imagemin-webpack-plugin').default;
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const clientPath = path.resolve('client');
@@ -68,6 +66,13 @@ module.exports = {
           fallback: 'style-loader',
         }),
       },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        use: [
+          'url-loader?limit=10000',
+          'img-loader',
+        ],
+      },
     ],
   },
   externals: {
@@ -85,17 +90,7 @@ module.exports = {
       template: 'layout/index.html',
       filename: 'index.html',
     }),
-    new CopyWebpackPlugin([{
-      from: staticPath,
-      to: distPath,
-    }]),
     new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/logo.png`)),
-    new ImageminPlugin({
-      test: /\.(jpe?g|png|gif|svg)$/i,
-      pngquant: {
-        quality: '95-100',
-      },
-    }),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

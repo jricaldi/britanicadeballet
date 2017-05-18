@@ -1,10 +1,15 @@
 import React from 'react';
-import './views.scss';
-import Profesoras from './Profesoras';
+import ListaProfesoras from './Profesoras/ListaProfesoras';
+import Clases from './Clases';
+import Contacto from './Contacto';
+import QuienesSomos from './QuienesSomos';
 
 const Inicio = () =>
   <div>
-    <Profesoras />
+    <QuienesSomos />
+    <ListaProfesoras />
+    <Clases />
+    <Contacto />
   </div>;
 
 export default Inicio;

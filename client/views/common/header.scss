@@ -16,7 +16,7 @@ header {
   align-items: center;
   height: 75px;
   padding: 30px 0;
-  #logo {
+  .logo {
     padding-left: 5%;
     width: 20%;
     height: 100%;
@@ -40,12 +40,37 @@ nav {
     li {
       a {
         text-decoration: none;
+        cursor: pointer;
         color: $color1;
         text-transform: uppercase;
         transition: color 1s;
 
         &:hover {
           color: $color2;
+        }
+
+        &.underline {
+          position: relative;
+          padding: 5px 15px;
+
+          &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            width: 100%;
+            background-color: $color2;
+            animation: width 0.5s;
+            transform: scaleX(0);
+            transition: all 0.4s;
+            border-radius: 2px;
+          }
+
+          &:hover:before {
+            transform: scaleX(1);
+          }
         }
       }
 

@@ -1,7 +1,11 @@
-import React, { Component } from "react";
+import React from 'react';
 
-const Horarios = () => {
-  return <h1>Horarios</h1>;
-}
+const Horarios = () =>
+  <div id="id-horarios">
+    <h2>Horarios</h2>
+    <section>
+      <h5>Detalle de la section de Horarios</h5>
+    </section>
+  </div>;
 
 export default Horarios;
