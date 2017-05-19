@@ -32,7 +32,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['env', 'react'],
+              presets: ['env', 'stage-0', 'react'],
               plugins: [
                 'react-html-attrs',
                 ['transform-object-rest-spread', { useBuiltIns: true }],

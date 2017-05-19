@@ -1,4 +1,5 @@
 module.exports = {
+    "parser": "babel-eslint",
     "extends": "airbnb",
     "plugins": [
         "react",
@@ -17,6 +18,7 @@ module.exports = {
       "no-multi-str": 0,
       "strict": 0,
       "max-len": 0,
+      "arrow-body-style": 2,
       "global-require": 2,
       "no-unused-expressions": 0,
       "no-underscore-dangle": 0,
@@ -28,4 +30,8 @@ module.exports = {
       "react/no-unknown-property": [0, { ignore: ['class', 'for'] }],
       "react/no-array-index-key": 0,
     },
+    "env": {
+        "browser": true,
+        "node": true
+    }
 };

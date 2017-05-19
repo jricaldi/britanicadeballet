@@ -1,0 +1,21 @@
+.about {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  align-items: center;
+  background-color: transparent;
+
+  &_firstLine {
+    color: white;
+    font-size: 40px;
+  }
+
+  &_secondLine {
+    color: white;
+    font-size: 30px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+}

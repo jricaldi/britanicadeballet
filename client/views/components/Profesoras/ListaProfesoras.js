@@ -7,7 +7,6 @@ const renderProfesoras = listaProfesoras =>
   listaProfesoras.map((profesora, index) => <Profesora info={ profesora } key={ index } />);
 
 const ListaProfesoras = () => {
-  console.log(dataProfesoras);
   const listaProfesoras = dataProfesoras;
 
   return <div id="id-profesoras" class="list-profesoras">

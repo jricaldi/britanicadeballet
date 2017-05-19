@@ -30,7 +30,7 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['env', 'react'],
+              presets: ['env', 'stage-0', 'react'],
               plugins: [
                 'react-html-attrs',
                 ['transform-object-rest-spread', { useBuiltIns: true }],
@@ -90,7 +90,7 @@ module.exports = {
       template: 'layout/index.html',
       filename: 'index.html',
     }),
-    new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/logo.png`)),
+    new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/ico.png`)),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),

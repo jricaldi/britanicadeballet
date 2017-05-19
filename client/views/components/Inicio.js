@@ -1,15 +1,20 @@
 import React from 'react';
 import ListaProfesoras from './Profesoras/ListaProfesoras';
-import Clases from './Clases';
-import Contacto from './Contacto';
-import QuienesSomos from './QuienesSomos';
+import Clases from './Clases/Clases';
+import Contacto from './Contacto/Contacto';
+import QuienesSomos from './QuienesSomos/QuienesSomos';
+import Home from './Home/Home';
+import Header from '../common/Header';
+import Layout from '../common/Layout';
 
 const Inicio = () =>
-  <div>
+  <Layout>
+    <Header />
+    <Home />
     <QuienesSomos />
     <ListaProfesoras />
     <Clases />
     <Contacto />
-  </div>;
+  </Layout>;
 
 export default Inicio;

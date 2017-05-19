@@ -1,0 +1,35 @@
+@import './layout/_mixins.scss';
+@import './layout/_general.scss';
+
+html, body {
+  background-color: black;
+  font-family: $font2, serif;
+}
+
+a, ul, nav, header, h1, h2, h3, h4, h5, h6 {
+  font-family: $font1;
+}
+
+section {
+  overflow: hidden;
+  min-height: 500px;
+  position: relative;
+  background-color: $colorBackground;
+  @include respond-to(large) {
+    padding: 2em;
+  }
+}
+
+#app-content {
+  width: 100%;
+  height: 100%;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  @include respond-to(large) {
+    width: 80%;
+  }
+}

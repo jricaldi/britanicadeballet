@@ -6,15 +6,12 @@ import {
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import Inicio from '../components/Inicio';
-import Layout from '../components/layout/Layout';
 
 const history = createBrowserHistory();
 
 const Root = () =>
   <Router history={ history }>
-    <Layout>
-      <Route exact path="/" component={ Inicio } />
-    </Layout>
+    <Route exact path="/" component={ Inicio } />
   </Router>;
 
 export default Root;
