@@ -3,8 +3,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
-const postcssCss = require('precss');
-const autoprefixer = require('autoprefixer');
+const postnext = require('postcss-cssnext');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const clientPath = path.resolve('client');
@@ -40,7 +39,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
+        test: /\.(css|scss)$/,
         use: ExtractTextPlugin.extract({
           use: [
             {
@@ -54,8 +53,7 @@ module.exports = {
               options: {
                 plugins: [
                   postcssImport,
-                  postcssCss,
-                  autoprefixer,
+                  postnext,
                 ],
               },
             },

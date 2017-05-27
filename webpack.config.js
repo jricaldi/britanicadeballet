@@ -1,10 +1,8 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
-const postcssCss = require('precss');
-const autoprefixer = require('autoprefixer');
+const postnext = require('postcss-cssnext');
 
 const clientPath = path.resolve('client');
 const distPath = path.resolve(__dirname, 'dist');
@@ -42,31 +40,37 @@ module.exports = {
         ],
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                minimize: false,
-              },
+        test: /\.(css|scss)$/i,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: [
-                  postcssImport,
-                  postcssCss,
-                  autoprefixer,
-                ],
-              },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
             },
-            {
-              loader: 'sass-loader',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              plugins: [
+                postcssImport,
+                postnext,
+              ],
             },
-          ],
-          fallback: 'style-loader',
-        }),
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -86,9 +90,6 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
-    new ExtractTextPlugin({
-      filename: '[hash]-bundle.css',
-    }),
     new HtmlWebpackPlugin({
       title: 'Britanica de Ballet',
       template: 'layout/index.html',
