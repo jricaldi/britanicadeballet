@@ -34,5 +34,12 @@ module.exports = {
     "env": {
         "browser": true,
         "node": true
+    },
+    "settings": {
+      "import/resolver": {
+        "webpack": {
+          "config": "webpack.config.js"
+        }
+      }
     }
 };
