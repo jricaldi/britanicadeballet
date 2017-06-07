@@ -43,15 +43,22 @@ header {
   &.headroom--unpinned {
       transform: translateY(-100%);
   }
+
+  .nav-trigger {
+    display: none;
+    @include respond-to(medium) {
+      display: block;
+      float: right;
+    }
+  }
 }
 
 
-nav {
+nav.nav-large {
   width: 80%;
   margin: 0 auto;
   @include respond-to(medium) {
     display: none;
-    background-color: red;
   }
   ul {
     display: flex;
@@ -101,4 +108,21 @@ nav {
 
     }
   }
+}
+
+nav.nav-small {
+  display: none;
+  @include respond-to(medium) {
+    display: block;
+  }
+}
+
+.nav-trigger {
+  background: transparent;
+  border: 0;
+  left: auto;
+  right: 1em;
+  width: 45px;
+  height: 45px;
+  &:focus { outline: 1px dotted #666; }
 }
