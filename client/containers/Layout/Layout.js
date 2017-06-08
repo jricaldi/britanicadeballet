@@ -4,11 +4,11 @@ import Clases from '../Clases/Clases';
 import Contacto from '../Contacto/Contacto';
 import QuienesSomos from '../QuienesSomos/QuienesSomos';
 import Home from '../Home/Home';
-import Header from '../../components/Header/Header';
+import Navigation from '../Navigation/Navigation';
 
 const Layout = () =>
   <div>
-    <Header />
+    <Navigation />
     <Home />
     <QuienesSomos />
     <ListaProfesoras />

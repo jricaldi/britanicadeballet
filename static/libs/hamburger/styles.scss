@@ -56,17 +56,16 @@
 }
 
 .main-nav {
-    font-family: inherit;
     top: 0;
     left:0;
-    z-index: 999;
     display: none;
     position: fixed;
     width: 100%;
-    background-color: orange;
+    background-color: black;
     height: 100%;
     overflow: hidden;
     margin: 0;
+    padding: 0;
     padding-top: 50px;
 }
 

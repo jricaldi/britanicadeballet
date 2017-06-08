@@ -1,0 +1,84 @@
+@import '../../sass/_colors.scss';
+
+.navDesktop {
+  display: flex;
+  align-items: center;
+  background-color: $colorBackground;
+  position: fixed;
+  height: 75px;
+  width: 100vw;
+  padding: 10px 0;
+  z-index: 998;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 100%;
+    img {
+      height: 100%;
+    }
+  }
+
+  &__navigator {
+    width: 70%;
+    ul {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+      li {
+        a {
+          position: relative;
+          padding: 5px 15px;
+          font-size: 14px;
+          text-decoration: none;
+          cursor: pointer;
+          color: $color1;
+          text-transform: uppercase;
+          transition: color 1s;
+
+          &:before {
+            content: "";
+            background-color: $color2;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            width: 100%;
+            animation: width 0.5s;
+            transform: scaleX(0);
+            transition: all 0.4s;
+            border-radius: 2px;
+          }
+
+          &:hover {
+            color: $color2;
+          }
+
+          &:hover:before {
+            transform: scaleX(1);
+          }
+
+        }
+      }
+    }
+  }
+
+  &.headroom {
+      will-change: transform;
+      transition: transform 200ms linear;
+  }
+
+  &.headroom--pinned {
+      transform: translateY(0%);
+  }
+
+  &.headroom--unpinned {
+      transform: translateY(-100%);
+  }
+}
