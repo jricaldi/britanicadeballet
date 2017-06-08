@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss';
+import './profesora.scss';
 
 const Profesora = ({ info }) =>
   <section class="profesora">

@@ -1,5 +1,6 @@
-@import './layout/_mixins.scss';
-@import './layout/_general.scss';
+@import './_colors.scss';
+@import './_fonts.scss';
+@import './_mixins.scss';
 
 html, body {
   background-color: black;
@@ -25,7 +26,7 @@ section {
   height: 100%;
 }
 
-.container{
+.container {
   display: flex;
   justify-content: center;
   width: 100%;

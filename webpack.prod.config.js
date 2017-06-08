@@ -85,7 +85,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'Britanica de Ballet',
-      template: 'layout/index.html',
+      template: 'templates/index.html',
       filename: 'index.html',
     }),
     new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/ico.png`)),

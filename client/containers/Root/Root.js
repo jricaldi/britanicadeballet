@@ -5,13 +5,13 @@ import {
 } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
-import Inicio from '../components/Inicio';
+import Layout from '../Layout/Layout';
 
 const history = createBrowserHistory();
 
 const Root = () =>
   <Router history={ history }>
-    <Route exact path="/" component={ Inicio } />
+    <Route exact path="/" component={ Layout } />
   </Router>;
 
 export default Root;

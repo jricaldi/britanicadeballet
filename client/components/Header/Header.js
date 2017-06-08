@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Headroom from 'headroom.js';
 import $ from 'jquery';
 import './header.scss';
-import { OnMobile, OnAtLeastTablet } from '../../layout/layoutGrid';
+import { OnMobile, OnAtLeastTablet } from '../Responsive/Responsive';
 import logo from '../../../static/images/logo.png';
 import '../../../static/libs/hamburger/styles.scss';
 

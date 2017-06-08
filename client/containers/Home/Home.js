@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import $ from 'jquery'; //eslint-disable-line
+import $ from 'jquery';
 import './home.scss';
 
 export default class Home extends Component {

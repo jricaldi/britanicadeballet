@@ -1,7 +1,7 @@
 import React from 'react';
 import Profesora from './Profesora';
-import { dataProfesoras } from '../../../helpers/database';
-import './styles.scss';
+import { dataProfesoras } from '../../helpers/database';
+import './listaProfesoras.scss';
 
 const renderProfesoras = listaProfesoras =>
   listaProfesoras.map((profesora, index) => <Profesora info={ profesora } key={ index } />);
