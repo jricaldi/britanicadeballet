@@ -1,6 +1,5 @@
 @import './_colors.scss';
 @import './_fonts.scss';
-@import './_mixins.scss';
 
 html, body {
   background-color: black;
@@ -12,12 +11,10 @@ a, ul, nav, header, h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-  min-height: 500px;
+  overflow: hidden;
   position: relative;
+  min-height: 500px;
   background-color: $colorBackground;
-  @include respond-to(large) {
-    padding: 2em;
-  }
 }
 
 #app-content {
@@ -29,7 +26,4 @@ section {
   display: flex;
   justify-content: center;
   width: 100%;
-  @include respond-to(large) {
-    width: 80%;
-  }
 }
