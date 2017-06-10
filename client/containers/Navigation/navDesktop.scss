@@ -3,7 +3,7 @@
 .navDesktop {
   display: flex;
   align-items: center;
-  background-color: $colorBackground;
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   height: 75px;
   width: 100vw;
@@ -16,6 +16,7 @@
     width: 30%;
     height: 100%;
     img {
+      filter: invert(100%);
       height: 100%;
     }
   }
@@ -37,7 +38,9 @@
           font-size: 14px;
           text-decoration: none;
           cursor: pointer;
-          color: $color1;
+          color: white;
+          font-weight: 600;
+          letter-spacing: 2px;
           text-transform: uppercase;
           transition: color 1s;
 
