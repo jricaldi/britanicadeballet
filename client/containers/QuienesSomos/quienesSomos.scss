@@ -5,17 +5,17 @@
   justify-content: center;
   background-color: transparent;
 
-  &__main-text {
+  &__text {
     color: white;
+    text-align: center;
     font-size: 40px;
-  }
 
-  &__secondary-text {
-    color: white;
-    font-size: 25px;
+    &--secondary {
+      font-size: 40px;
+    }
+
     .number {
       color: pink;
-      font-size: 40px;
     }
   }
 }
