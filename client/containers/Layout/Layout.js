@@ -11,9 +11,11 @@ const Layout = () =>
     <Navigation />
     <Home />
     <QuienesSomos />
-    <ListaProfesoras />
-    <Clases />
-    <Contacto />
+    { /*
+      <ListaProfesoras />
+      <Clases />
+      <Contacto />
+    */ }
   </div>;
 
 export default Layout;

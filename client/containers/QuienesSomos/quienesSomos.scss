@@ -1,20 +1,21 @@
 .about {
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
   justify-content: center;
-  align-items: center;
   background-color: transparent;
 
-  &_firstLine {
+  &__main-text {
     color: white;
     font-size: 40px;
   }
 
-  &_secondLine {
+  &__secondary-text {
     color: white;
-    font-size: 30px;
-  }
-
-  .container {
-    flex-wrap: wrap;
+    font-size: 25px;
+    .number {
+      color: pink;
+      font-size: 40px;
+    }
   }
 }
