@@ -11,8 +11,8 @@ const Layout = () =>
     <Navigation />
     <Home />
     <QuienesSomos />
+    <ListaProfesoras />
     { /*
-      <ListaProfesoras />
       <Clases />
       <Contacto />
     */ }

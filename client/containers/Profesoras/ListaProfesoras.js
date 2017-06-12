@@ -9,9 +9,9 @@ const renderProfesoras = listaProfesoras =>
 const ListaProfesoras = () => {
   const listaProfesoras = dataProfesoras;
 
-  return <div id="id-profesoras" class="list-profesoras">
+  return <section id="id-profesoras" class="listaProfesoras">
     { renderProfesoras(listaProfesoras) }
-  </div>;
+  </section>;
 };
 
 export default ListaProfesoras;

@@ -13,17 +13,16 @@ export default class NavMobile extends Component {
     $('.mid-menu').toggleClass('mid-animate');
     $('.bottom-menu').toggleClass('bottom-animate');
   }
-
+  // TODO create a function to get all links also onClick events
   render = () =>
     <div class="navMobile">
       <Link to="/" class="navMobile__logo"><img src={ logo } alt="Britanica de ballet" /></Link>
       <nav role="navigation" class="navMobile__menu">
         <ul class="main-nav">
-          <li><a href="">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Our Work</a></li>
-          <li><a href="">Products</a></li>
-          <li><a href="">Contact Us</a></li>
+          <li><a href="">Clases</a></li>
+          <li><a href="">Profesoras</a></li>
+          <li><a href="">Horarios</a></li>
+          <li><a href="">Contactos</a></li>
         </ul>
         <div class="navMobile__action" onClick={ this.showMobileNav } >
           <a class="navMobile__action__icon">

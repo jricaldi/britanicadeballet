@@ -1,38 +1,52 @@
+@import '../../sass/_colors.scss';
 @import '../../sass/_mixins.scss';
+@import '../../sass/_constant.scss';
 
 .profesora {
-  display: flex;
-  justify-content: space-between;
-  .foto {
+  margin: 0 5%;
+  padding: 100px 5%;
+  background: $color4;
+  @include query(down-medium) {
+    padding: 0;
+    margin: 0;
+    background: $color3;
+  }
+
+  &__image {
+    height: $heightImage;
+    overflow: hidden;
+    @include query(down-medium) {
+      padding: 0;
+      height: auto;
+    }
     img {
-      opacity: 0.8;
-      max-width: 100%;
-    }
-  }
-
-  .info {
-    h2 {
-      text-align: center;
-      font-size: 60px;
-      font-weight: 200;
-      @include respond-to(medium) {
-        font-size: 40px;
-      }
-    }
-    p {
-      font-size: 14px;
-      line-height: 25px;
-    }
-  }
-
-  & > div {
-    width: 50%;
-  }
-
-  @include respond-to(medium) {
-    flex-wrap: wrap;
-    & > div {
+      filter: grayscale(85%);
       width: 100%;
     }
   }
+
+  &__info {
+    margin-top: -60px;
+    padding-left: 5%;
+    z-index: 1;
+    @include query(down-medium) {
+      margin-top: -50px;
+    }
+    &__name, &__surname {
+      display: block;
+      font-size: (60rem/16);
+      @include query(down-medium) {
+        font-size: (45rem/16)
+      }
+    }
+    &__name {
+      color: $color2;
+    }
+  }
+
+  &__details {
+    background-color: transparent;
+    padding: 0 10%;
+  }
+
 }
