@@ -4,10 +4,10 @@
 
 .profesora {
   margin: 0 5%;
-  padding: 100px 5%;
+  padding: 100px 5% 0 5%;
   background: $color4;
   @include query(down-medium) {
-    padding: 0;
+    padding: 0 0 2em 0;
     margin: 0;
     background: $color3;
   }
@@ -47,6 +47,15 @@
   &__details {
     background-color: transparent;
     padding: 0 10%;
+    padding-top: 30px;
+    line-height: 2em;
+    text-indent: 30px;
+    column-count: 2;
+    @include query(down-medium) {
+      column-count: 1;
+      line-height: 1.5em;
+    }
   }
+
 
 }

@@ -11,7 +11,7 @@ const Profesora = ({ info }) =>
       <span class="profesora__info__surname">{ info.apellidoPaterno }</span>
     </div>
     <div class="profesora__details col-xs-12">
-      <p>{ info.detalle }</p>
+      { info.detalle }
     </div>
   </article>;
 

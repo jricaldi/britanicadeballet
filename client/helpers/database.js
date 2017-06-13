@@ -12,7 +12,7 @@ export const dataProfesoras = [
   },
   {
     nombre: 'Mili',
-    apellidoPaterno: 'Mili Nugent',
+    apellidoPaterno: 'Nugent',
     apellidoMaterno: '',
     detalle: 'Se dedica a la enseñanza del ballet clásico y tap desde 1991 en nuestra academia. Inició sus estudios de ballet en la Academia de Ballet Miraflores.Culminó sus estudios en la Academia Británica de Ballet bajo la dirección de la Sra. Rosina Müller. \
     Aprende el método de la Royal Academy of Dance de Londres.En el año 1988 se incorpora a la Cía. Danza Viva donde permanece hasta el año 1991. Actualmente es parte del staff de profesores de la Escuela Independiente Danza Viva y dicta clases en diversos nidos y colegios.',
