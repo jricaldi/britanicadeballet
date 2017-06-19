@@ -1,7 +1,7 @@
 import React from 'react';
-import './quienesSomos.scss';
+import './about.scss';
 
-const QuienesSomos = () =>
+const About = () =>
   <section class="about">
     <div class="row">
       <h2 class="about__text col-xs-12">Expresa el arte que llevas adentro a través de tu cuerpo</h2>
@@ -9,4 +9,4 @@ const QuienesSomos = () =>
     </div>
   </section>;
 
-export default QuienesSomos;
+export default About;

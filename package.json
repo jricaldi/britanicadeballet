@@ -18,6 +18,7 @@
     "babel-eslint": "^7.2.3",
     "flexboxgrid": "^6.3.1",
     "forever": "^0.15.3",
+    "gsap": "^1.19.1",
     "headroom.js": "^0.9.3",
     "history": "^4.6.1",
     "mobx": "^3.1.11",

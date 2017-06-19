@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import { TweenLite, Power2 } from 'gsap';
 import './home.scss';
 
 export default class Home extends Component {
 
   componentDidMount = () => {
-    $(window).bind('scroll', () => {
+    $(window).on('scroll', () => {
       const dy = $(window).scrollTop();
-      $(this.home).css('opacity', 1 - (dy / 500));
+      const home = $(this.home);
+      TweenLite.to(home, 0.1, { opacity: 1 - (dy / 600), ease: Power2.easeOut });
     });
   }
 
