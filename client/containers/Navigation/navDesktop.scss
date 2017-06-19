@@ -51,16 +51,12 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 1px;
+            height: 2px;
             width: 100%;
             animation: width 0.5s;
             transform: scaleX(0);
             transition: all 0.4s;
             border-radius: 2px;
-          }
-
-          &:hover {
-            color: $color2;
           }
 
           &:hover:before {

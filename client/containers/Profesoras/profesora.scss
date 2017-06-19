@@ -5,7 +5,7 @@
 .profesora {
   margin: 0 5%;
   padding: 100px 5% 0 5%;
-  background: $color4;
+  background: $color3;
   @include query(down-medium) {
     padding: 0 0 2em 0;
     margin: 0;
