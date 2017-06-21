@@ -1,8 +1,10 @@
+@import '../../sass/_colors.scss';
+
 .about {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(1, 0, 0, 0);
+  background-color: transparent;
 
   &__text {
     color: white;
