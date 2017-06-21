@@ -15,6 +15,7 @@
     "heroku-postbuild": "npm run clear-bundles && npm run build-app"
   },
   "dependencies": {
+    "aos": "^2.1.1",
     "babel-eslint": "^7.2.3",
     "flexboxgrid": "^6.3.1",
     "forever": "^0.15.3",
