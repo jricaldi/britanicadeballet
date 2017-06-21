@@ -12,9 +12,9 @@ const Layout = () =>
     <Home />
     <About />
     <ListaProfesoras />
+    <Contacto />
     { /*
       <Clases />
-      <Contacto />
     */ }
   </div>;
 
