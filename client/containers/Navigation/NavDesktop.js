@@ -10,12 +10,12 @@ const Slink = Scroll.Link;
 export default class NavDesktop extends Component {
 
   componentDidMount = () => {
-    const headroom = new Headroom(this.header);
+    const headroom = new Headroom(this.navDesktop);
     headroom.init();
   }
 
   render = () =>
-    <div class="navDesktop" ref={ node => { this.header = node; } }>
+    <div class="navDesktop" ref={ node => { this.navDesktop = node; } }>
       <Link to="/" class="navDesktop__logo">
         <img src={ logo } alt="Britanica de ballet" />
       </Link>
