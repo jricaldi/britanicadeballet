@@ -59,6 +59,7 @@
     line-height: 2em;
     text-indent: 30px;
     column-count: 2;
+    text-align: justify;
     @include query(down-medium) {
       column-count: 1;
       line-height: 1.5em;

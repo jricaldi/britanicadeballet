@@ -1,31 +1,71 @@
 @import '../../sass/_colors.scss';
+@import '../../sass/_mixins.scss';
 
 .contacto {
+  padding-bottom: 100px;
   &__box {
-    padding: 100px 5% 0 5%;
+    display: flex;
+    justify-content: center;;
+    margin: 0 5%;
+    padding: 100px 13% 0 13%;
+
+    @include query(down-medium) {
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 40px 5% 0 5%;
+    }
 
     &__button {
       a {
         display: block;
         color: $color3;
         border: 2px solid $color3;
+        font-size: 12px;
         padding: 12px;
         width: 124px;
         text-align: center;
-        text-transform: uppercase;
+        text-transform: capitalize;
         letter-spacing: 2px;
         font-weight: 600;
         cursor: pointer;
         margin-top: 40px;
+        border-radius: 2px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+        &:hover {
+          border-color: $color2;
+        }
       }
     }
 
-    &__map {
-      iframe {
-        filter: grayscale(100%);
-        border: none;
+    &__info {
+      padding: 0 100px;
+      @include query(down-medium) {
+        margin-top: 40px;
+        padding: 0;
+      }
+
+      &__address {
+        a, p {
+          color: $color3;
+          text-decoration: none;
+        }
+        @include query(down-medium) {
+          text-align: center;
+        }
+      }
+
+      &__map {
+        margin-top: 40px;
         width: 100%;
-        height: 500px;
+        iframe {
+          border: none;
+          width: 100%;
+          height: 300px;
+        }
+
       }
     }
 
