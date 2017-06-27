@@ -22,17 +22,20 @@ export default class Root extends Component {
 
   componentDidMount = () => {
     aos.init();
-    setTimeout(() => this.setState({ loading: false }), 2000);
+    setTimeout(() => this.setState({ loading: false }), 1500);
   }
 
   render = () => {
     const { loading } = this.state;
 
     if (loading) {
-      return <div class="loadingLanding" />;
+      return <div class="loading-container">
+        <div class="loading" />
+        <div id="loading-text">cargando</div>
+      </div>;
     }
 
-    return <Router history={ history }>
+    return <Router history={ history } onLoad={ this.completedLoad }>
       <Route exact path="/" component={ Layout } />
     </Router>;
   }
