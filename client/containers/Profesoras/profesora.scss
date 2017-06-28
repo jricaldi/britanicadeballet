@@ -24,8 +24,8 @@
     height: $heightImage;
     overflow: hidden;
     @include query(down-medium) {
-      padding: 0;
       height: auto;
+      padding: 0;
     }
     img {
       filter: grayscale(85%);
@@ -59,6 +59,7 @@
     line-height: 2em;
     text-indent: 30px;
     column-count: 2;
+    column-gap: 50px;
     text-align: justify;
     @include query(down-medium) {
       column-count: 1;
