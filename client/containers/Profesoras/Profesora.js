@@ -13,6 +13,12 @@ const Profesora = ({ info }) =>
     <div class="profesora__details col-xs-12">
       { info.detalle }
     </div>
+    <div class="profesora__horarios col-xs-12">
+      { info.horarios.map(horario =>
+        <div>
+          { `${horario.name} - ${horario.time}` }
+        </div>) }
+    </div>
   </article>;
 
 export default Profesora;
