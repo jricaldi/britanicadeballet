@@ -6,15 +6,24 @@ export default class Contacto extends Component {
     return <section class="contacto" id="id-contacto">
       <div class="contacto__box">
         <div class="contacto__box__button">
-          <a>facebook</a>
-          <a>youtube</a>
-          <a>twitter</a>
+          <a href="https://www.facebook.com/britanicadeballet" target="_blank" rel="noopener noreferrer">facebook</a>
+          <a href="https://www.instagram.com/britanicadeballet/" target="_blank" rel="noopener noreferrer">instagram</a>
+          <a href="https://www.youtube.com/c/Britanicadeballet" target="_blank" rel="noopener noreferrer">youtube</a>
         </div>
         <div class="contacto__box__info">
           <div class="contacto__box__info__address">
-            <a href="tel:+51014481113">+51 (01) 4481113</a>
+            <a href="tel:+5114481113">+51 1 448-1113</a>
             <p>
-              Avenida Alfredo Franco 200, Urbanización Chama, Surco
+              Av. Alfredo Franco 200, Urb. Chama, Surco - Lima
+            </p>
+            <p>
+              britanicaballet@gmail.com
+            </p>
+            <p>
+              Atención presencial: <br /><br />
+              &nbsp;&nbsp; Lunes y Miércoles 3:00PM - 6:30PM <br /><br />
+              &nbsp;&nbsp; Martes y Jueves 3:30PM - 6:30PM <br /><br />
+              &nbsp;&nbsp; Sábados 3:00PM - 6:00PM
             </p>
           </div>
           <div class="contacto__box__info__map">

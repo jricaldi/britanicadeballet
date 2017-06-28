@@ -31,7 +31,7 @@ export default class Root extends Component {
     if (loading) {
       return <div class="loading-container">
         <div class="loading" />
-        <div id="loading-text">cargando</div>
+        <div id="loading-text">Britanica de Ballet</div>
       </div>;
     }
 

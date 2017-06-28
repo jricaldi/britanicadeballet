@@ -21,9 +21,7 @@ export default class NavDesktop extends Component {
       </Link>
       <nav class="navDesktop__navigator">
         <ul>
-          <li><Slink to="id-clases" smooth="easeInOutCubic">Clases</Slink></li>
-          <li><Slink to="id-profesoras" smooth="easeInOutCubic">Profesoras</Slink></li>
-          <li><Slink to="id-horarios" smooth="easeInOutCubic">Horarios</Slink></li>
+          <li><Slink to="id-profesoras" smooth="easeInOutCubic">Profesoras y Horarios</Slink></li>
           <li><Slink to="id-contacto" smooth="easeInOutCubic">Contactos</Slink></li>
         </ul>
       </nav>

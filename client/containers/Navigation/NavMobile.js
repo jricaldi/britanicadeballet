@@ -19,9 +19,7 @@ export default class NavMobile extends Component {
       <Link to="/" class="navMobile__logo"><img src={ logo } alt="Britanica de ballet" /></Link>
       <nav role="navigation" class="navMobile__menu">
         <ul class="main-nav">
-          <li><a href="">Clases</a></li>
-          <li><a href="">Profesoras</a></li>
-          <li><a href="">Horarios</a></li>
+          <li><a href="">Profesoras y Horarios</a></li>
           <li><a href="">Contactos</a></li>
         </ul>
         <div class="navMobile__action" onClick={ this.showMobileNav } >
