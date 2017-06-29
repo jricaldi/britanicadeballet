@@ -15,8 +15,13 @@ const Profesora = ({ info }) =>
     </div>
     <div class="profesora__horarios col-xs-12">
       { info.horarios.map(horario =>
-        <div>
-          { `${horario.name} - ${horario.time}` }
+        <div key={ horario.name } class="profesora__horarios__single row">
+          <div class="profesora__horarios__single__name col-md-4 col-xs-12 center-xs end-md">
+            <span>{ horario.name }</span>
+          </div>
+          <div class="profesora__horarios__single__time col-md-8 col-xs-12 center-xs start-md">
+            <span>{ horario.time }</span>
+          </div>
         </div>) }
     </div>
   </article>;
