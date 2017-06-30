@@ -17,17 +17,13 @@ export default class NavMobile extends Component {
     $('.bottom-menu').toggleClass('bottom-animate');
   }
 
-  closeMenu = () => {
-    $('.main-nav').fadeToggle(500);
-  }
-
   render = () =>
     <div class="navMobile">
       <Link to="/" class="navMobile__logo"><img src={ logo } alt="Britanica de ballet" /></Link>
       <nav role="navigation" class="navMobile__menu">
         <ul class="main-nav">
-          <li><Slink to="id-profesoras" smooth="easeInOutCubic" onClick={ this.closeMenu }>Profesoras y Horarios</Slink></li>
-          <li><Slink to="id-contacto" smooth="easeInOutCubic" onClick={ this.closeMenu }>Contactos</Slink></li>
+          <li><Slink to="id-profesoras" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Profesoras y Horarios</Slink></li>
+          <li><Slink to="id-contacto" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Contactos</Slink></li>
         </ul>
         <div class="navMobile__action" onClick={ this.showMobileNav } >
           <a class="navMobile__action__icon">
