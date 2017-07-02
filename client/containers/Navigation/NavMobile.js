@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Scroll from 'react-scroll';
 import $ from 'jquery';
 import logo from '../../../static/images/logo.png';
@@ -19,7 +18,9 @@ export default class NavMobile extends Component {
 
   render = () =>
     <div class="navMobile">
-      <Link to="/" class="navMobile__logo"><img src={ logo } alt="Britanica de ballet" /></Link>
+      <Slink to="id-home" class="navMobile__logo" smooth="easeInOutCubic">
+        <img src={ logo } alt="Britanica de ballet" />
+      </Slink>
       <nav role="navigation" class="navMobile__menu">
         <ul class="main-nav">
           <li><Slink to="id-profesoras" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Profesoras y Horarios</Slink></li>

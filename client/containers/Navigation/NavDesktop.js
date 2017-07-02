@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Scroll from 'react-scroll';
-import { Link } from 'react-router-dom';
 import Headroom from 'headroom.js';
 import logo from '../../../static/images/logo.png';
 import './navDesktop.scss';
@@ -16,9 +15,9 @@ export default class NavDesktop extends Component {
 
   render = () =>
     <div class="navDesktop" ref={ node => { this.navDesktop = node; } }>
-      <Link to="/" class="navDesktop__logo">
+      <Slink to="id-home" class="navDesktop__logo" smooth="easeInOutCubic">
         <img src={ logo } alt="Britanica de ballet" />
-      </Link>
+      </Slink>
       <nav class="navDesktop__navigator">
         <ul>
           <li><Slink to="id-profesoras" smooth="easeInOutCubic">Profesoras y Horarios</Slink></li>

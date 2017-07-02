@@ -25,7 +25,7 @@ export default class Home extends Component {
   }
 
   render = () =>
-    <section class="home" ref={ node => { this.home = node; } }>
+    <section id="id-home" class="home" ref={ node => { this.home = node; } }>
       <div class="home__image" ref={ node => { this.image = node; } } />
     </section>;
 }
