@@ -87,6 +87,9 @@ module.exports = {
       title: 'Britanica de Ballet',
       template: 'templates/index.html',
       filename: 'index.html',
+      minify: {
+        collapseWhitespace: true,
+      },
     }),
     new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/ico.png`)),
     new webpack.DefinePlugin({
