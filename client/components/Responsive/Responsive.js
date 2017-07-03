@@ -1,13 +1,18 @@
 import { layoutGenerator } from 'react-break';
 
 const layout = layoutGenerator({
-  mobile: 0,
-  phablet: 550,
-  tablet: 768,
-  desktop: 992,
+  xsmall: 480,
+  small: 768,
+  medium: 1024,
+  large: 1200,
 });
 
-export const OnMobile = layout.is('mobile');
-export const OnAtLeastTablet = layout.isAtLeast('tablet');
-export const OnAtMostPhablet = layout.isAtMost('phablet');
-export const OnDesktop = layout.is('desktop');
+export const DownXsmall = layout.isAtMost('xsmall');
+export const DownSmall = layout.isAtMost('small');
+export const DownMedium = layout.isAtMost('medium');
+export const DownLarge = layout.isAtMost('large');
+
+export const UpXsmall = layout.isAtLeast('xsmall');
+export const UpSmall = layout.isAtLeast('small');
+export const UpMedium = layout.isAtLeast('medium');
+export const UpLarge = layout.isAtLeast('large');

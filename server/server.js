@@ -46,5 +46,5 @@ if (debug) {
 }
 
 app.listen(PORT, () => {
-  console.log(` 🌎  Running Britanica de Ballet app on PORT = ${PORT}`);
+  console.log(` 🌎  Running Británica de Ballet app on PORT = ${PORT}`);
 });

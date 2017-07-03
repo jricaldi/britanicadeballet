@@ -21,10 +21,9 @@
   }
 
   &__image {
-    height: $heightImage;
+    max-height: 600px;
     overflow: hidden;
     @include query(down-medium) {
-      height: auto;
       padding: 0;
     }
     img {
@@ -73,14 +72,25 @@
   &__horarios {
     column-count: unset;
     &__single {
+      display: flex;
       border-bottom: 1px solid #EEE;
       padding: 10px 0;
       margin: 0 100px;
       @include query(down-medium) {
         margin: 0;
+        flex-wrap: wrap;
+        justify-content: center;
       }
       &:last-child {
         border-bottom: none;
+      }
+      &__name {
+        width: 150px;
+        margin-right: 20px;
+        text-align: center;
+        @include query(down-medium) {
+          margin: 0;
+        }
       }
     }
   }

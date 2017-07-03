@@ -19,7 +19,7 @@ export default class NavMobile extends Component {
   render = () =>
     <div class="navMobile">
       <Slink to="id-home" class="navMobile__logo" smooth="easeInOutCubic">
-        <img src={ logo } alt="Britanica de ballet" />
+        <img src={ logo } alt="Británica de ballet" />
       </Slink>
       <nav role="navigation" class="navMobile__menu">
         <ul class="main-nav">

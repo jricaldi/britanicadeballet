@@ -91,7 +91,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Britanica de Ballet',
+      title: 'Británica de Ballet',
       template: 'templates/index.html',
       filename: 'index.html',
     }),

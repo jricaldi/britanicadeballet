@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import 'flexboxgrid';
 import Root from './containers/Root/Root';
 import './sass/global.scss';
 

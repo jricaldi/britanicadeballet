@@ -10,6 +10,11 @@ const clientPath = path.resolve('client');
 const staticPath = path.resolve('static');
 const distPath = path.resolve(__dirname, 'dist');
 
+const banner = `
+/*!
+ * Designed by Jorge Ricaldi github.com/jricaldi
+ * */`;
+
 module.exports = {
   context: clientPath,
   devtool: false,
@@ -84,7 +89,7 @@ module.exports = {
       filename: '[hash]-bundle.css',
     }),
     new HtmlWebpackPlugin({
-      title: 'Britanica de Ballet',
+      title: 'Británica de Ballet',
       template: 'templates/index.html',
       filename: 'index.html',
       minify: {
@@ -102,5 +107,6 @@ module.exports = {
         warnings: false,
       },
     }),
+    new webpack.BannerPlugin({ banner, raw: true, entryOnly: true }),
   ],
 };

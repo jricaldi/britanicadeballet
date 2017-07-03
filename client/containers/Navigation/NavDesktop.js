@@ -16,7 +16,7 @@ export default class NavDesktop extends Component {
   render = () =>
     <div class="navDesktop" ref={ node => { this.navDesktop = node; } }>
       <Slink to="id-home" class="navDesktop__logo" smooth="easeInOutCubic">
-        <img src={ logo } alt="Britanica de ballet" />
+        <img src={ logo } alt="Británica de ballet" />
       </Slink>
       <nav class="navDesktop__navigator">
         <ul>

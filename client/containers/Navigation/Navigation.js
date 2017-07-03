@@ -1,17 +1,17 @@
 import React from 'react';
-import { OnAtMostPhablet, OnAtLeastTablet } from '../../components/Responsive/Responsive';
+import { UpMedium, DownSmall } from '../../components/Responsive/Responsive';
 import NavDesktop from './NavDesktop';
 import NavMobile from './NavMobile';
 import Header from '../../components/Header/Header';
 
 const Navigation = () =>
   <Header>
-    <OnAtLeastTablet>
+    <UpMedium>
       <NavDesktop />
-    </OnAtLeastTablet>
-    <OnAtMostPhablet>
+    </UpMedium>
+    <DownSmall>
       <NavMobile />
-    </OnAtMostPhablet>
+    </DownSmall>
   </Header>;
 
 export default Navigation;
