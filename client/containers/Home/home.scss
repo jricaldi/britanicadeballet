@@ -2,18 +2,13 @@
 @import '../../sass/_mixins.scss';
 
 .home {
-  width: 100vw;
-  height: 100vh;
-  background-color: transparent;
-  overflow: visible;
+  min-height: 100vh;
   &__image {
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
+    min-width: 100vw;
+    min-height: 100vh;
     position: fixed;
     background-position: center center;
-    background-width: 100%;
     background-size: cover;
-    filter: grayscale(60%);
+    filter: grayscale(25%);
   }
 }

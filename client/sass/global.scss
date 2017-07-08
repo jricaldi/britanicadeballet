@@ -2,7 +2,7 @@
 @import './_fonts.scss';
 
 html, body {
-  background-color: black;
+  background-color: $color1;
   font-family: $font2, serif;
   font-size: 16px;
 }
@@ -23,7 +23,11 @@ section {
 }
 
 #app-content {
-  width: 100vw;
-  height: 100vh;
-  max-width: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+*{
+  -webkit-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
