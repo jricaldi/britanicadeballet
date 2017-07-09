@@ -7,16 +7,18 @@
   background-color: transparent;
 
   &__text {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-
-    &--secondary {
-      font-size: 40px;
+    color: $color3;
+    padding: 0 5px;
+    h1 {
+      text-align: center;
+      font-size: 45px;
     }
-
-    .number {
-      color: $color2;
+    h2 {
+      text-align: center;
+      font-size: 35px;
+      span {
+        color: $color2;
+      }
     }
   }
 }
