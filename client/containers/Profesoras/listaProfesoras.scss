@@ -1,3 +1,11 @@
-.list-profesoras {
+@import '../../sass/_mixins.scss';
+
+.listaProfesoras {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 5%;
+  @include query(down-medium) {
+    padding: 0;
+  }
 }

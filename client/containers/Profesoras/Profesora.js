@@ -17,10 +17,10 @@ const Profesora = ({ info }) =>
       { info.horarios.map(horario =>
         <div key={ horario.name } class="profesora__horarios__single">
           <div class="profesora__horarios__single__name">
-            <span>{ horario.name }</span>
+            <div>{ horario.name }</div>
           </div>
           <div class="profesora__horarios__single__time">
-            <span>{ horario.time }</span>
+            <div>{ horario.time }</div>
           </div>
         </div>) }
     </div>

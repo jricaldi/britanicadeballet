@@ -23,6 +23,7 @@ export default class Root extends Component {
   componentDidMount = () => {
     aos.init();
     setTimeout(() => this.setState({ loading: false }), 1500);
+    flexibility(document.documentElement); // eslint-disable-line
   }
 
   render = () => {

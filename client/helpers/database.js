@@ -68,7 +68,7 @@ export const dataProfesoras = [
         time: 'Lunes y Miércoles 5pm - 6:30pm',
       },
       {
-        name: 'Adolescentes y Adultas principiantes',
+        name: 'Adolescentes & Adultas principiantes',
         time: 'Lunes y Miércoles 6:30PM - 7:30PM',
       },
     ],
