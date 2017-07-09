@@ -1,15 +1,33 @@
 @import '../../sass/_colors.scss';
 @import '../../sass/_mixins.scss';
 
+@keyframes scroll-opacity {
+  0%  { opacity: 0 }
+  50% { opacity: 1 }
+  100%{ opacity: 0 }
+}
+
 .home {
   min-height: 100vh;
   overflow: visible;
   &__image {
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     min-width: 100vw;
     min-height: 100vh;
     position: fixed;
     background-position: center center;
     background-size: cover;
     filter: grayscale(25%);
+    &__scroll-down {
+      opacity: 0;
+      margin-bottom: 30px;
+      color: $color3;
+      font-size: 30px;
+      font-weight: bold;
+      animation: loading-opacity 2s linear 0s infinite normal;
+    }
   }
 }

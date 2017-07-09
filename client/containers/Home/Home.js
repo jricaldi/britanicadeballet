@@ -16,7 +16,6 @@ export default class Home extends Component {
     const bgimage = new Image();
     bgimage.src = fondoInicio;
     const image = $(this.image);
-    image.css('opacity', '0');
     $(bgimage).load(function render() {
       const src = $(this).attr('src');
       image.css('background-image', `url("${src}")`);
@@ -25,7 +24,11 @@ export default class Home extends Component {
   }
 
   render = () =>
-    <section id="id-home" class="home" ref={ node => { this.home = node; } }>
-      <div class="home__image" ref={ node => { this.image = node; } } />
+    <section id="id-home" class="home" ref={ node => (this.home = node) }>
+      <div class="home__image" ref={ node => (this.image = node) } >
+        <div class="home__image__scroll-down" ref={ node => (this.scrollDown = node) }>
+          Ve más abajo
+        </div>
+      </div>
     </section>;
 }
