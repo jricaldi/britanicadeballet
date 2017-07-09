@@ -29,9 +29,13 @@ export default class Root extends Component {
     const { loading } = this.state;
 
     if (loading) {
-      return <div class="loading-container">
-        <div class="loading" />
-        <div id="loading-text">Británica de Ballet</div>
+      return <div class="loading">
+        <div class="loading__circle">
+          <div />
+        </div>
+        <div class="loading__text">
+          <div>Británica de Ballet</div>
+        </div>
       </div>;
     }
 
