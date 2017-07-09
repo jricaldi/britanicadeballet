@@ -9,7 +9,9 @@ const Slink = Scroll.Link;
 export default class NavDesktop extends Component {
 
   componentDidMount = () => {
-    const headroom = new Headroom(this.navDesktop);
+    const headroom = new Headroom(this.navDesktop, {
+      tolerance: 10,
+    });
     headroom.init();
   }
 
@@ -17,6 +19,7 @@ export default class NavDesktop extends Component {
     <div class="navDesktop" ref={ node => { this.navDesktop = node; } }>
       <Slink to="id-home" class="navDesktop__logo" smooth="easeInOutCubic">
         <img src={ logo } alt="Británica de ballet" />
+        <span>Academia Británica de Ballet</span>
       </Slink>
       <nav class="navDesktop__navigator">
         <ul>
