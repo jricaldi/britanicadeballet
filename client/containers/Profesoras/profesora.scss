@@ -50,6 +50,9 @@
       color: $color2;
     }
   }
+  &__details, &__info {
+    background-color: rgba(195,215,238,0.3);
+  }
 
   &__details, &__horarios {
     padding: 0 10%;
@@ -63,6 +66,7 @@
     text-indent: 30px;
     column-count: 2;
     column-gap: 50px;
+    padding-bottom: 3em;
     @include query(down-medium) {
       column-count: 1;
     }
