@@ -1,33 +1,47 @@
 @import '../../sass/_colors.scss';
 @import '../../sass/_mixins.scss';
 
-@keyframes scroll-opacity {
-  0%  { opacity: 0 }
-  50% { opacity: 1 }
-  100%{ opacity: 0 }
-}
-
 .home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  min-width: 100vw;
   overflow: visible;
-  &__image {
-    opacity: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  &__mainImage {
     min-width: 100vw;
     min-height: 100vh;
     position: fixed;
-    background-position: center center;
-    background-size: cover;
-    filter: grayscale(25%);
-    &__scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__image {
       opacity: 0;
-      margin-bottom: 30px;
-      color: $color3;
-      font-size: 30px;
-      font-weight: bold;
-      animation: loading-opacity 2s linear 0s infinite normal;
+      height: 100vh;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      filter: grayscale(25%);
     }
+  }
+
+  &__caret {
+    align-self: flex-end;
+    background-color: rgba($color2, .9);
+    border-radius: 50%;
+    z-index: 1;
+    transform: scale(0.5);
+
+    @include query(down-medium) {
+      transform: scale(0.4);
+    }
+
+    &:hover {
+      transform: scale(0.4);
+      transition: transform 1s ease;
+      cursor: pointer;
+    }
+
+
   }
 }
