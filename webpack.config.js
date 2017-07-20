@@ -22,7 +22,6 @@ module.exports = {
     publicPath: '/',
   },
   module: {
-    noParse: /jquery/,
     rules: [
       {
         test: /\.js$/,
@@ -82,9 +81,6 @@ module.exports = {
         ],
       },
     ],
-  },
-  externals: {
-    jquery: 'jQuery',
   },
   resolve: {
     extensions: ['.js', '.json'],

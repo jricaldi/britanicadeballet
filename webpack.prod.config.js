@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 const postcssImport = require('postcss-smart-import');
 const postnext = require('postcss-cssnext');
 const postcssFlexibility = require('postcss-flexibility');
@@ -26,7 +27,6 @@ module.exports = {
     publicPath: '/',
   },
   module: {
-    noParse: /jquery/,
     rules: [
       {
         test: /\.js$/,
@@ -80,9 +80,6 @@ module.exports = {
       },
     ],
   },
-  externals: {
-    jquery: 'jQuery',
-  },
   resolve: {
     extensions: ['.js', '.json'],
   },
@@ -110,5 +107,6 @@ module.exports = {
       },
     }),
     new webpack.BannerPlugin({ banner, raw: true, entryOnly: true }),
+    new OfflinePlugin(),
   ],
 };

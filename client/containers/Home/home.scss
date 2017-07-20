@@ -30,14 +30,14 @@
     background-color: rgba($color2, .9);
     border-radius: 50%;
     z-index: 1;
-    transform: scale(0.5);
+    transform: scale(0.3);
 
     @include query(down-medium) {
-      transform: scale(0.4);
+      transform: scale(0.3);
     }
 
     &:hover {
-      transform: scale(0.4);
+      transform: scale(0.35);
       transition: transform 1s ease;
       cursor: pointer;
     }
