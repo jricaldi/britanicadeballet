@@ -93,5 +93,11 @@ module.exports = {
       template: 'templates/index.html',
       filename: 'index.html',
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+      },
+      ___OFFLINE_APP___: false,
+    }),
   ],
 };

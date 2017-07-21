@@ -100,6 +100,7 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
       },
+      ___OFFLINE_APP___: true,
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

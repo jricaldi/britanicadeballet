@@ -4,7 +4,7 @@ module.exports = {
     "plugins": [
         "react",
         "jsx-a11y",
-        "import"
+        "import",
     ],
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -33,13 +33,16 @@ module.exports = {
     },
     "env": {
         "browser": true,
-        "node": true
+        "node": true,
     },
     "settings": {
       "import/resolver": {
         "webpack": {
-          "config": "webpack.config.js"
+          "config": "webpack.config.js",
         }
       }
+    },
+    "globals": {
+      "___OFFLINE_APP___": true,
     }
 };
