@@ -4,7 +4,7 @@ import Scroll from 'react-scroll';
 import { TweenLite, Power2, Power1 } from 'gsap';
 import './home.scss';
 import fondoInicio from '../../../static/images/fondo-inicio.jpg';
-import shoes from '../../../static/images/shoes.png';
+import caret from '../../../static/images/caret.png';
 
 const scroll = Scroll.animateScroll;
 
@@ -36,6 +36,8 @@ export default class Home extends Component {
                                             onLoad={ this.imageLoaded }
                                             ref={ node => (this.image = node) } />
       </div>
-      <img class="home__caret" src={ shoes } alt="Scroll Down" onClick={ this.goAboutSection } />
+      <div class="home__caret">
+        <img class="home__caret__image" src={ caret } alt="Scroll Down" onClick={ this.goAboutSection } />
+      </div>
     </section>;
 }
