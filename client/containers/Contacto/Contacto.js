@@ -21,9 +21,12 @@ export default class Contacto extends Component {
             </p>
             <p>
               Atención presencial: <br /><br />
-              &nbsp;&nbsp; Lunes y Miércoles 3:00PM - 6:30PM <br /><br />
+              &nbsp;&nbsp; Lunes y Miércoles 4:00PM - 6:30PM <br /><br />
               &nbsp;&nbsp; Martes y Jueves 3:30PM - 6:30PM <br /><br />
               &nbsp;&nbsp; Sábados 3:00PM - 6:00PM
+            </p>
+            <p>
+              Entre el 28.07.17 - 01.08.17 así como el día jueves 03.08.17 nuestra academia estará cerrada por vacaciones.
             </p>
           </div>
           <div class="contacto__box__info__map">
