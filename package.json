@@ -17,6 +17,7 @@
   "dependencies": {
     "aos": "^2.1.1",
     "babel-eslint": "^7.2.3",
+    "express-sslify": "^1.2.0",
     "forever": "^0.15.3",
     "gsap": "^1.19.1",
     "headroom.js": "^0.9.3",

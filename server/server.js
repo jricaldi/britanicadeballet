@@ -2,6 +2,7 @@ import express from 'express';
 import webpack from 'webpack';
 import serveStatic from 'serve-static';
 import path from 'path';
+import redirectToSSL from 'express-sslify';
 import webpackConfig from '../webpack.config';
 
 const debug = process.env.NODE_ENV !== 'production';
@@ -38,6 +39,7 @@ if (debug) {
     res.end();
   });
 } else {
+  app.use(redirectToSSL.HTTPS({ trustProtoHeader: true })); // redirect to HTTPS https://github.com/florianheinemann/express-sslify#reverse-proxies-heroku-nodejitsu-and-others
   app.use(serveStatic(staticPath));
   app.use(serveStatic(webpackConfig.output.path));
   app.get('*', (req, res) => {
