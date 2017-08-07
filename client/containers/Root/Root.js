@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import {
@@ -11,7 +11,7 @@ import './root.scss';
 
 const history = createBrowserHistory();
 
-export default class Root extends Component {
+export default class Root extends PureComponent {
 
   constructor() {
     super();

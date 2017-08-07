@@ -1,6 +1,6 @@
 import React from 'react';
 import ListaProfesoras from '../Profesoras/ListaProfesoras';
-import Clases from '../Clases/Clases';
+import ListaClases from '../Clases/ListaClases';
 import Contacto from '../Contacto/Contacto';
 import About from '../About/About';
 import Home from '../Home/Home';
@@ -11,11 +11,9 @@ const Layout = () =>
     <Navigation />
     <Home />
     <About />
+    <ListaClases />
     <ListaProfesoras />
     <Contacto />
-    { /*
-      <Clases />
-    */ }
   </div>;
 
 export default Layout;

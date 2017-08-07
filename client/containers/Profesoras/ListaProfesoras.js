@@ -1,17 +1,9 @@
 import React from 'react';
-import Profesora from './Profesora';
+import SectionList from '../../components/Section/SectionList';
 import { dataProfesoras } from '../../helpers/database';
-import './listaProfesoras.scss';
 
-const renderProfesoras = listaProfesoras =>
-  listaProfesoras.map((profesora, index) => <Profesora info={ profesora } key={ index } />);
-
-const ListaProfesoras = () => {
-  const listaProfesoras = dataProfesoras;
-
-  return <section id="id-profesoras" class="listaProfesoras">
-    { renderProfesoras(listaProfesoras) }
-  </section>;
-};
+const ListaProfesoras = () => <SectionList scrollId="id-profesoras"
+                                dataList={ dataProfesoras }
+                                title="/ Profesoras /" />;
 
 export default ListaProfesoras;

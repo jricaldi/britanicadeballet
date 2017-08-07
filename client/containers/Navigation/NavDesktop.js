@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Scroll from 'react-scroll';
 import Headroom from 'headroom.js';
 import logo from '../../../static/images/logo.png';
@@ -6,7 +6,7 @@ import './navDesktop.scss';
 
 const Slink = Scroll.Link;
 
-export default class NavDesktop extends Component {
+export default class NavDesktop extends PureComponent {
 
   componentDidMount = () => {
     const headroom = new Headroom(this.navDesktop, {

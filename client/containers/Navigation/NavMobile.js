@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Scroll from 'react-scroll';
 import $ from 'jquery';
 import logo from '../../../static/images/logo.png';
@@ -6,7 +6,7 @@ import './navMobile.scss';
 
 const Slink = Scroll.Link;
 
-export default class NavMobile extends Component {
+export default class NavMobile extends PureComponent {
 
   showMobileNav = () => {
     $(this.mainNav).fadeToggle(500);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import $ from 'jquery';
 import Scroll from 'react-scroll';
 import { TweenLite, Power2, Power1 } from 'gsap';
@@ -8,7 +8,7 @@ import caret from '../../../static/images/caret.png';
 
 const scroll = Scroll.animateScroll;
 
-export default class Home extends Component {
+export default class Home extends PureComponent {
 
   componentDidMount = () => {
     $(window).on('scroll', () => {
