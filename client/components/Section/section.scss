@@ -5,7 +5,6 @@
   width: 100%;
   padding-bottom: 50px;
   background: $color3;
-
   @include query(down-medium) {
     padding: 0 0 2em 0;
   }
@@ -52,14 +51,43 @@
   }
 
   &__details {
-    color: $color5;
-    text-indent: 30px;
-    column-count: 2;
-    column-gap: 50px;
-    padding-bottom: 3em;
-    @include query(down-medium) {
-      column-count: 1;
+
+    &__info {
+      color: $color5;
+      text-indent: 30px;
+      column-count: 2;
+      column-gap: 50px;
+      padding-bottom: 3em;
+      @include query(down-medium) {
+        column-count: 1;
+      }
     }
+
+    &__consultButton {
+      position: absolute;
+      cursor: pointer;
+      background-color: $color2;
+      color: $color3;
+      height: 70px;
+      width: 70px;
+      text-transform: capitalize;
+      border-radius: 50%;
+      border: 1px solid $color2;
+      letter-spacing: 1px;
+      right: 10%;
+      outline: none;
+      margin-top: -35px;
+      @include query(down-medium) {
+        height: 60px;
+        width: 60px;
+        margin-top: -30px;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
   }
 
   &__horarios {

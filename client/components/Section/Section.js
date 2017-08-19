@@ -1,7 +1,13 @@
 import React from 'react';
 import './section.scss';
+import consultButton from '../../../static/images/write-icon.svg';
 
-const Section = ({ info, isClassSection }) => {
+const renderDialogOpenButton = openMessageDialog =>
+  <button class="section__details__consultButton" onClick={ openMessageDialog }>
+    <img src={ consultButton } alt="consult button" />
+  </button>;
+
+const Section = ({ info, isClassSection, openMessageDialog }) => {
   const backgoundSection = (isClassSection && 'classSection') || 'classTeachers';
   return <article class="section">
     <div class="section__image">
@@ -12,7 +18,10 @@ const Section = ({ info, isClassSection }) => {
       { info.extraName && <span class="section__info__surname" data-aos="zoom-out-right" data-aos-once>{ info.extraName }</span> }
     </div>
     <div class={ `section__details ${backgoundSection}` }>
-      { info.details }
+      <div class="section__details__info">
+        { info.details }
+      </div>
+      { isClassSection && renderDialogOpenButton(openMessageDialog) }
     </div>
     <div class="section__horarios">
       { info.schedules.map(schedule =>
