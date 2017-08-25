@@ -15,10 +15,19 @@ const basicEntry = [
 module.exports = {
   context: clientPath,
   devtool: 'inline-source-map',
-  entry: basicEntry.concat('./main.js'),
+  entry: {
+    main: basicEntry.concat('./main.js'),
+    vendor: [
+      'jquery',
+      'react',
+      'mobx',
+      'aos',
+      'gsap',
+    ],
+  },
   output: {
     path: distPath,
-    filename: '[hash]-[name].js',
+    filename: '[name].[hash].js',
     publicPath: '/',
   },
   module: {
@@ -87,11 +96,18 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       title: 'Británica de Ballet',
       template: 'templates/index.html',
       filename: 'index.html',
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
     }),
     new webpack.DefinePlugin({
       'process.env': {

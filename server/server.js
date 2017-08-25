@@ -1,50 +1,20 @@
 import express from 'express';
-import webpack from 'webpack';
-import serveStatic from 'serve-static';
 import path from 'path';
-import redirectToSSL from 'express-sslify';
 import webpackConfig from '../webpack.config';
+import { startApiForDevMode } from './api/mode/apiDev';
+import { startApiForProdMode } from './api/mode/apiProd';
 
 const debug = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3000;
 
-const staticPath = path.resolve(__dirname, '../static');
-
 const app = express();
-const compiler = webpack(webpackConfig);
 
 
 if (debug) {
-  const serverOptions = {
-    contentBase: webpackConfig.output.path,
-    quiet: true,
-    noInfo: true,
-    hot: true,
-    inline: true,
-    lazy: false,
-    publicPath: webpackConfig.output.publicPath,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
-    stats: {
-      colors: true,
-    },
-  };
-  const middleware = require('webpack-dev-middleware')(compiler, serverOptions); //eslint-disable-line
-
-  app.use(middleware);
-  app.use(require('webpack-hot-middleware')(compiler)); //eslint-disable-line
-  app.get('*', (req, res) => {
-    res.write(middleware.fileSystem.readFileSync(`${webpackConfig.output.path}/index.html`));
-    res.end();
-  });
+  startApiForDevMode(webpackConfig, app);
 } else {
-  app.use(redirectToSSL.HTTPS({ trustProtoHeader: true })); // redirect to HTTPS https://github.com/florianheinemann/express-sslify#reverse-proxies-heroku-nodejitsu-and-others
-  app.use(serveStatic(staticPath));
-  app.use(serveStatic(webpackConfig.output.path));
-  app.get('*', (req, res) => {
-    res.sendFile(`${webpackConfig.output.path}/index.html`);
-  });
+  const staticPath = path.resolve(__dirname, '../static');
+  startApiForProdMode(webpackConfig, app, staticPath);
 }
 
 app.listen(PORT, () => {

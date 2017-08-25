@@ -20,10 +20,19 @@ const banner = `
 module.exports = {
   context: clientPath,
   devtool: false,
-  entry: './main.js',
+  entry: {
+    main: './main.js',
+    vendor: [
+      'jquery',
+      'react',
+      'mobx',
+      'aos',
+      'gsap',
+    ],
+  },
   output: {
     path: distPath,
-    filename: '[hash]-[name].js',
+    filename: '[name].[hash].js',
     publicPath: '/',
   },
   module: {
@@ -85,7 +94,7 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: '[hash]-bundle.css',
+      filename: 'main.[hash].css',
     }),
     new HtmlWebpackPlugin({
       title: 'Británica de Ballet',
@@ -94,6 +103,14 @@ module.exports = {
       minify: {
         collapseWhitespace: true,
       },
+    }),
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime',
     }),
     new FaviconsWebpackPlugin(path.resolve(`${staticPath}/images/ico.png`)),
     new webpack.DefinePlugin({
