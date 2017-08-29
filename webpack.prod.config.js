@@ -47,7 +47,11 @@ module.exports = {
               presets: ['env', 'stage-0', 'react'],
               plugins: [
                 'react-html-attrs',
-                ['transform-object-rest-spread', { useBuiltIns: true }],
+                'transform-decorators-legacy',
+                [
+                  'transform-object-rest-spread',
+                  { useBuiltIns: true },
+                ],
               ],
             },
           },

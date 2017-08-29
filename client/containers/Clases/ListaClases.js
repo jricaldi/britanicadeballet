@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { observer, inject } from 'mobx-react';
 import SectionList from '../../components/Section/SectionList';
 import { dataClases } from '../../helpers/database';
 
 
-const openMessageDialog = () => console.log('open dialog');
+@inject('application')
+@observer
+export default class ListaClases extends Component {
 
-const ListaClases = () => <SectionList scrollId="id-clases"
-                            dataList={ dataClases }
-                            isClassSection
-                            openMessageDialog={ openMessageDialog }
-                            title="/ Clases /" />;
+  openMessageDialog = () => {
+    this.props.application.toggleDialog();
+  }
 
-export default ListaClases;
+  render = () =>
+    <SectionList scrollId="id-clases"
+      dataList={ dataClases }
+      isClassSection
+      openMessageDialog={ this.openMessageDialog }
+      title="/ Clases /" />;
+
+}
