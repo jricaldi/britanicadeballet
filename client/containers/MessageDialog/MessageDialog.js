@@ -10,13 +10,20 @@ export default class MessageDialog extends Component {
     this.props.application.toggleDialog();
   }
 
+  sendMessage = () => {
+    const message = { name: this.name.value };
+    this.props.application.sendMessage(message);
+    this.props.application.toggleDialog();
+  }
+
   renderDialog = openMessageDialog => {
-    console.log('dialog =>', openMessageDialog);
     if (!openMessageDialog) return null;
-    return <div class="messageDialog" >
-      <div>
-        <input type="text" placeholder="Nombre" />
-        <button onClick={ this.closeFormDialog }> Cerrar </button>
+    return <div class="messageDialog">
+      <div class="messageDialog__body">
+        <h2>Envianos un mensaje</h2>
+        <input type="text" placeholder="Nombre" ref={ node => { this.name = node; } } />
+        <button onClick={ this.sendMessage }>Enviar</button>
+        <button onClick={ this.closeFormDialog }>Cancelar</button>
       </div>
     </div>;
   }

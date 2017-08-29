@@ -1,5 +1,19 @@
+@import '../../sass/_colors.scss';
+
 .messageDialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  background-color: red;
+  background-color: rgba($color1, .8);
   z-index: 999;
+  min-height: 100vh;
+  min-width: 100vw;
+  &__body {
+    background-color: $color3;
+    min-height: 80vh;
+    max-width: 95vw;
+    width: 400px;
+    padding: 5%;
+  }
 }

@@ -1,11 +1,15 @@
 import { observable } from 'mobx';
+import axios from 'axios';
 
 export default class Application {
   @observable openMessageDialog;
 
   toggleDialog = () => {
-    console.log('store => ', this.openMessageDialog);
     if (this.openMessageDialog) this.openMessageDialog = false;
     else this.openMessageDialog = true;
+  }
+
+  sendMessage = message => {
+    axios.post('/sendMail', message);
   }
 }

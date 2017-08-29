@@ -16,7 +16,9 @@
   },
   "dependencies": {
     "aos": "^2.1.1",
+    "axios": "^0.16.2",
     "babel-eslint": "^7.2.3",
+    "body-parser": "^1.17.2",
     "express-sslify": "^1.2.0",
     "forever": "^0.15.3",
     "gsap": "^1.19.1",

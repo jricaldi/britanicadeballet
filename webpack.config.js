@@ -117,6 +117,7 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
       },
+      'global.GENTLY': false,
       ___OFFLINE_APP___: false,
     }),
   ],
