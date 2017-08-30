@@ -4,7 +4,9 @@ import config from '../../config/config';
 export const sendMail = (req, res) => {
   const { name } = req.body;
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
     auth: {
       user: config.emailLogin,
       pass: config.emailPassword,

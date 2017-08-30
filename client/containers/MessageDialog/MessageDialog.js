@@ -19,8 +19,8 @@ export default class MessageDialog extends Component {
   renderDialog = openMessageDialog => {
     if (!openMessageDialog) return null;
     return <div class="messageDialog">
-      <div class="messageDialog__body">
-        <h2>Envianos un mensaje</h2>
+      <div class="messageDialog__form">
+        <h2 class="messageDialog__form__title">/ Envianos un mensaje /</h2>
         <input type="text" placeholder="Nombre" ref={ node => { this.name = node; } } />
         <button onClick={ this.sendMessage }>Enviar</button>
         <button onClick={ this.closeFormDialog }>Cancelar</button>
