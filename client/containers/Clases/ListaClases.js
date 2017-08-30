@@ -16,7 +16,6 @@ export default class ListaClases extends Component {
     <SectionList scrollId="id-clases"
       dataList={ dataClases }
       isClassSection
-      openMessageDialog={ this.openMessageDialog }
-      title="/ Clases /" />;
+      openMessageDialog={ this.openMessageDialog } />;
 
 }
