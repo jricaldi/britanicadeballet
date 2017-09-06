@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
+import $ from 'jquery';
+import { TweenLite, Power2 } from 'gsap';
 import './messageDialog.scss';
 
 @inject('application')
 @observer
 export default class MessageDialog extends Component {
 
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     form: $(this.)
+  //   }
+  // }
+
   closeFormDialog = () => {
-    this.props.application.toggleDialog();
+    const form = $(this.form);
+    const teen = TweenLite.to(form, 0.5, { opacity: 0, y: -50, ease: Power2.easeOut })
+    console.log(teen);
+
+    // .onComplete(function () {
+    //   console.log('termino');
+    //   this.props.application.toggleDialog();
+    // });
   }
 
   sendMessage = () => {
@@ -16,10 +32,16 @@ export default class MessageDialog extends Component {
     this.props.application.toggleDialog();
   }
 
+  openForm = () => {
+    const form = $(this.form);
+    TweenLite.to(form, 0.5, { opacity: 1, y: 50, ease: Power2.easeOut });
+  }
+
   renderDialog = openMessageDialog => {
-    if (!openMessageDialog) return null;
-    return <div class="messageDialog">
-      <div class="messageDialog__form">
+    const showMessageDialog = (openMessageDialog && 'show') || 'hide';
+
+    return <div class={ `messageDialog ${showMessageDialog}` } >
+      <div class="messageDialog__form" ref={ node => { this.form = node; } }>
         <h2 class="messageDialog__form__title">/ Envianos un mensaje /</h2>
         <input type="text" placeholder="Nombre" ref={ node => { this.name = node; } } />
         <button onClick={ this.sendMessage }>Enviar</button>
@@ -28,8 +50,12 @@ export default class MessageDialog extends Component {
     </div>;
   }
 
+
   render = () => {
     const { openMessageDialog } = this.props.application;
+    if (openMessageDialog) {
+      this.openForm();
+    }
     return this.renderDialog(openMessageDialog);
   }
 }

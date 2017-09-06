@@ -17,6 +17,7 @@
     max-width: 95vw;
     width: 400px;
     padding: 1%;
+    opacity: 0;
     @include query(down-medium) {
       padding: 5%;
     }

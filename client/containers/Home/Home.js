@@ -36,8 +36,7 @@ export default class Home extends PureComponent {
                                             ref={ node => (this.image = node) } />
       </div>
       <div class="home__caret">
-        <a class="home__caret__image" onClick={ this.goAboutSection } >
-        </a>
+        <a class="home__caret__image" onClick={ this.goAboutSection } />
       </div>
     </section>;
 }
