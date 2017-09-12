@@ -77,8 +77,11 @@ export const dataProfesoras = [
 export const dataClases = [
   {
     name: 'Ballet',
-    details: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+    details: 'Entendemos que al ser parte del desarrollo artístico de nuestras alumnas, estamos formando el crecimiento humano en cada una de ellas. Tenemos el privilegio de cumplir esta labor  desde 1956. Seguimos la metodología de ballet clásico de la Royal Academy of Dance de Inglaterra que introdujo a Lima nuestra fundadora la maestra inglesa Rosina Müller. Fuimos los primeros en introducir el Tap en el Perú y es por eso que a partir del grado pre-primary nuestras alumnas se forman con dos tipos de danza: la hora de clase se divide en 45min de ballet y 15min de Tap.',
     image: ballet,
+    showSchedules: false,
+    showClass: true,
+    enableSendEmails: false,
     schedules: [
       {
         name: '3 años',
@@ -118,6 +121,9 @@ export const dataClases = [
     name: 'Música',
     details: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
     image: musica,
+    showSchedules: false,
+    showClass: false,
+    enableSendEmails: false,
     schedules: [
       {
         name: 'Piano',
@@ -136,8 +142,11 @@ export const dataClases = [
   {
     name: 'Danza',
     extraName: 'Contemporánea',
-    details: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+    details: 'Desarrolla tu creatividad y sensibilidad artística aprendiendo las técnicas básicas de la Danza Contemporánea. Si sientes motivación por expresarte mediante el cuerpo, deseas cargarte de energía, mantenerte en forma e iniciarte dentro de esta bella disciplina, solicita una clase de prueba con nosotros.',
     image: danzaContemporanea,
+    showSchedules: false,
+    showClass: true,
+    enableSendEmails: false,
     schedules: [
       {
         name: 'Adolescentes & Adultas principiantes',
@@ -149,6 +158,9 @@ export const dataClases = [
     name: 'Musicoterapia',
     details: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
     image: musicoterapia,
+    showSchedules: false,
+    showClass: false,
+    enableSendEmails: false,
     schedules: [
       {
         name: '5 años en adelante',

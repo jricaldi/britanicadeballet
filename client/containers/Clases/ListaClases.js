@@ -7,6 +7,12 @@ import { dataClases } from '../../helpers/database';
 @inject('application')
 @observer
 export default class ListaClases extends Component {
+  constructor() {
+    super();
+    this.state = {
+      dataClases: dataClases.filter(clase => clase.showClass),
+    };
+  }
 
   openMessageDialog = () => {
     this.props.application.toggleDialog();
@@ -14,7 +20,7 @@ export default class ListaClases extends Component {
 
   render = () =>
     <SectionList scrollId="id-clases"
-      dataList={ dataClases }
+      dataList={ this.state.dataClases }
       isClassSection
       openMessageDialog={ this.openMessageDialog } />;
 

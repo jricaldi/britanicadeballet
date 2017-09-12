@@ -21,10 +21,13 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
       <div class="section__details__info">
         { info.details }
       </div>
-      { isClassSection && renderDialogOpenButton(openMessageDialog) }
+      { isClassSection && info.enableSendEmails && renderDialogOpenButton(openMessageDialog) }
     </div>
     <div class="section__horarios">
-      { info.schedules.map(schedule =>
+      { !info.showSchedules && <div class="section__horarios__noShedules">
+        <div>Pronto estaremos publicando nuevos horarios</div>
+      </div>}
+      { info.showSchedules && info.schedules.map(schedule =>
         <div key={ schedule.name } class="section__horarios__single">
           <div class="section__horarios__single__name">
             <div>{ schedule.name }</div>
