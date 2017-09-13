@@ -7,7 +7,9 @@ import './sass/global.scss';
 
 if (___OFFLINE_APP___) {
   const offlinePluginRuntime = require('offline-plugin/runtime'); //eslint-disable-line
-  offlinePluginRuntime.install();
+  offlinePluginRuntime.install({
+    onUpdateReady: () => offlinePluginRuntime.applyUpdate(),
+  });
 }
 const app = document.getElementById('app-content');
 

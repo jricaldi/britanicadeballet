@@ -13,7 +13,9 @@ body {
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing:  border-box;
+  -webkit-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 ul, nav, header, h1, h2, h3, h4, h5, h6 {
@@ -32,7 +34,12 @@ section {
   min-height: 100vh;
 }
 
-*{
-  -webkit-highlight-color: rgba(0,0,0,0);
-  -webkit-tap-highlight-color: transparent;
+:root {
+  .hide {
+    display: none;
+  }
+
+  .show {
+    display: flex;
+  }
 }

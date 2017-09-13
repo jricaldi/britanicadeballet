@@ -129,6 +129,15 @@ module.exports = {
       },
     }),
     new webpack.BannerPlugin({ banner, raw: true, entryOnly: true }),
-    new OfflinePlugin(),
+    new OfflinePlugin({
+      excludes: ['**/*.map'],
+      updateStrategy: 'changed',
+      autoUpdate: 1000 * 60,
+      responseStrategy: 'network-first',
+      ServiceWorker: {
+        events: true,
+        navigateFallbackURL: '/',
+      },
+    }),
   ],
 };

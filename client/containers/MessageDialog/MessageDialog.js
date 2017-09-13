@@ -17,7 +17,7 @@ export default class MessageDialog extends Component {
 
   closeFormDialog = () => {
     const form = $(this.form);
-    const teen = TweenLite.to(form, 0.5, { opacity: 0, y: -50, ease: Power2.easeOut })
+    const teen = TweenLite.to(form, 0.5, { opacity: 0, y: -50, ease: Power2.easeOut });
     console.log(teen);
 
     // .onComplete(function () {

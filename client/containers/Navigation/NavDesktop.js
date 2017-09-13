@@ -18,7 +18,7 @@ export default class NavDesktop extends PureComponent {
   render = () =>
     <div class="navDesktop" ref={ node => { this.navDesktop = node; } }>
       <Slink to="id-home" class="navDesktop__logo" smooth="easeInOutCubic">
-        <img src={ logo } alt="Británica de ballet" />
+        <img src={ logo } alt="Británica de balletuuuuuu" />
         <span>Academia Británica de Ballet</span>
       </Slink>
       <nav class="navDesktop__navigator">
