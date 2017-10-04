@@ -28,7 +28,8 @@ export default class NavMobile extends PureComponent {
             <img src={ logo } alt="Británica de ballet" />
           </div>
         </ul>
-        <div class="navMobile__action" onClick={ this.showMobileNav } >
+        <div onClick={ this.showMobileNav } className="navMobile__wrap" />
+        <div class="navMobile__action" >
           <a class="navMobile__action__icon">
             <div class="menui top-menu" ref={ node => (this.topMenu = node) } />
             <div class="menui mid-menu" ref={ node => (this.midMenu = node) } />
