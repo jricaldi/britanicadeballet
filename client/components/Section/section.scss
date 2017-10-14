@@ -20,7 +20,7 @@
     max-height: 600px;
     overflow: hidden;
     img {
-      filter: grayscale(25%);
+      // filter: grayscale(25%);
       width: 100%;
     }
   }
@@ -97,10 +97,11 @@
       padding: 0 10%;
       padding-top: 40px;
     }
-    
+
     &__noShedules {
       display: flex;
       justify-content: center;
+      text-align: center;
     }
 
     &__single {

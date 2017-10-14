@@ -30,6 +30,7 @@ module.exports = {
       "react/no-unknown-property": [0, { ignore: ['class', 'for'] }],
       "react/no-array-index-key": 0,
       "jsx-a11y/no-static-element-interactions": 0,
+      "jsx-a11y/anchor-has-content": 0,
     },
     "env": {
         "browser": true,

@@ -8,22 +8,10 @@ import './messageDialog.scss';
 @observer
 export default class MessageDialog extends Component {
 
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     form: $(this.)
-  //   }
-  // }
-
   closeFormDialog = () => {
     const form = $(this.form);
-    const teen = TweenLite.to(form, 0.5, { opacity: 0, y: -50, ease: Power2.easeOut });
-    console.log(teen);
-
-    // .onComplete(function () {
-    //   console.log('termino');
-    //   this.props.application.toggleDialog();
-    // });
+    const toggleDialog = this.props.application.toggleDialog;
+    TweenLite.to(form, 0.5, { opacity: 0, y: -50, ease: Power2.easeOut, onComplete: () => toggleDialog() });
   }
 
   sendMessage = () => {
