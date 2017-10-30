@@ -22,10 +22,14 @@ export default class NavMobile extends PureComponent {
       </Slink>
       <nav role="navigation">
         <ul class="navMobile__menu" ref={ node => (this.mainNav = node) }>
-          <li><Slink to="id-profesoras" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Profesoras y Horarios</Slink></li>
+          <li><Slink to="id-clases-ballet" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Ballet</Slink></li>
+          <li><Slink to="id-clases-danza" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Danza Contemporánea</Slink></li>
+          <li><Slink to="id-profesoras" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Profesoras</Slink></li>
           <li><Slink to="id-contacto" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Contactos</Slink></li>
           <div class="navMobile__menu__logo">
-            <img src={ logo } alt="Británica de ballet" />
+            <Slink to="id-home" smooth="easeInOutCubic" style={ { cursor: 'pointer' } }>
+              <img src={ logo } alt="Británica de ballet" onClick={ this.showMobileNav } />
+            </Slink>
           </div>
         </ul>
         <div onClick={ this.showMobileNav } className="navMobile__wrap" />

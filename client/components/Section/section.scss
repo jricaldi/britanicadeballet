@@ -128,11 +128,13 @@
         display: flex;
         justify-content: center;
         text-align: center;
+        align-items: center;
+        font-weight: 600;
         @include query(down-medium) {
           margin: 0;
         }
         div {
-          width: 150px;
+          width: 90%;
           @include query(down-medium) {
             width: 100%;
           }

@@ -7,9 +7,16 @@ const renderDialogOpenButton = openMessageDialog =>
     <img src={ consultButton } alt="consult button" />
   </button>;
 
+const renderTime = time => {
+  if (typeof time === 'string') {
+    return <div>{ time }</div>;
+  }
+  return time.map((t, index) => <div key={ index }>{ t }</div>);
+};
+
 const Section = ({ info, isClassSection, openMessageDialog }) => {
   const backgoundSection = (isClassSection && 'classSection') || 'classTeachers';
-  return <article class="section">
+  return <article class="section" id={ info.scrollId }>
     <div class="section__image">
       <img src={ info.image } alt={ info.name } data-aos="zoom-in" data-aos-once />
     </div>
@@ -34,7 +41,7 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
           </div>
           { schedule.time &&
           <div class="section__horarios__single__time">
-            <div>{ schedule.time }</div>
+            { renderTime(schedule.time) }
           </div> }
         </div>) }
     </div>
