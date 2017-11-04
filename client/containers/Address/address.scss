@@ -1,0 +1,17 @@
+@import '../../sass/_mixins.scss';
+
+.address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+
+  iframe {
+    width: 80%;
+    height: 400px;
+
+    @include query(down-medium) {
+      width: 100%;
+    }
+  }
+}

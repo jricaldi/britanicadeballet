@@ -4,7 +4,7 @@ import Scroll from 'react-scroll';
 import { TweenLite, Power2, Power1 } from 'gsap';
 import './home.scss';
 import fondoInicio from '../../../static/images/fondo-inicio.jpg';
-import caret from '../../../static/images/caret.png';
+import caretIcon from '../../../static/images/caret.png';
 
 const scroll = Scroll.animateScroll;
 
@@ -15,6 +15,9 @@ export default class Home extends PureComponent {
       const dy = $(window).scrollTop();
       const home = $(this.home);
       TweenLite.to(home, 0.1, { opacity: 1 - (dy / 600), ease: Power2.easeOut });
+
+      const caret = $(this.caret);
+      TweenLite.to(caret, 0.2, { opacity: 0 });
     });
   }
 
@@ -37,8 +40,10 @@ export default class Home extends PureComponent {
                                             ref={ node => (this.image = node) } />
       </div>
       <div class="home__caret">
-        <a class="home__caret__image" onClick={ this.goAboutSection }>
-          <img src={ caret } alt="caret" />
+        <a class="home__caret__image"
+          onClick={ this.goAboutSection }
+          ref={ node => { this.caret = node; } }>
+          <img src={ caretIcon } alt="caret" />
         </a>
       </div>
     </section>;
