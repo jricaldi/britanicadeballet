@@ -5,10 +5,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0 5%;
-  @include query(down-medium) {
-    padding: 0;
-  }
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
 
   &__title {
     background-color: $color3;

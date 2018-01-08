@@ -17,11 +17,11 @@ export const dataProfesoras = [
     schedules: [
       {
         name: 'Avanzadas',
-        time: 'Lunes y Miércoles 5:00pm - 6:30pm',
+        time: 'Lunes y Miércoles 5:30pm - 7:00pm',
       },
       {
         name: 'Adolescentes & Adultas principiantes',
-        time: 'Lunes y Miércoles 6:30pm - 7:30pm',
+        time: 'Lunes y Miércoles 7:00pm - 8:00pm',
       },
     ],
   },
@@ -55,23 +55,23 @@ export const dataProfesoras = [
     schedules: [
       {
         name: '4 años',
-        time: 'Lunes y Miércoles 3:00pm - 4:00pm',
+        time: 'Lunes y Miércoles 3:30pm - 4:30pm',
       },
       {
         name: '6 & 7 años',
-        time: 'Lunes y Miércoles 4:00pm - 5:00pm',
+        time: 'Lunes y Miércoles 4:30pm - 5:30pm',
       },
       {
         name: '5 & 6 años',
-        time: 'Sábados 3:00pm - 4:00pm',
+        time: 'Sábados 10:00am - 11:00am',
       },
       {
         name: '3 & 4 años',
-        time: 'Sábados 4:00pm - 5:00pm',
+        time: 'Sábados 11:00am - 12:00pm',
       },
       {
         name: 'Adolescentes & Adultas principiantes',
-        time: 'Sábados 5:00pm - 6:00pm',
+        time: 'Sábados 12:00pm - 1:00pm',
       },
     ],
   },
@@ -80,7 +80,7 @@ export const dataProfesoras = [
 export const dataClases = [
   {
     name: 'Ballet',
-    details: 'Entendemos que al ser parte del desarrollo artístico de nuestras alumnas, estamos formando el crecimiento humano en cada una de ellas. Tenemos el privilegio de cumplir esta labor  desde 1956. Seguimos la metodología de ballet clásico de la Royal Academy of Dance de Inglaterra que introdujo a Lima nuestra fundadora la maestra inglesa Rosina Müller. Fuimos los primeros en introducir el Tap en el Perú y es por eso que a partir del grado pre-primary nuestras alumnas se forman con dos tipos de danza: la hora de clase se divide en 45min de ballet y 15min de Tap.',
+    details: 'Entendemos que al ser parte del desarrollo artístico de nuestras alumnas, estamos formando el crecimiento humano en cada una de ellas. Tenemos el privilegio de cumplir esta labor  desde 1956. Seguimos la metodología de ballet clásico de la Royal Academy of Dance de Inglaterra que introdujo a Lima nuestra fundadora la maestra inglesa Rosina Müller. Fuimos los primeros en introducir el Tap en el Perú y es por eso que a partir del grado Pre-primary 2 nuestras alumnas se forman con dos tipos de danza: la hora de clase se divide en 45min de ballet y 15min de Tap.',
     image: ballet,
     showSchedules: true,
     showClass: true,
@@ -88,44 +88,29 @@ export const dataClases = [
     scrollId: 'id-clases-ballet',
     schedules: [
       {
-        name: '3 años: Pre-Primary 1',
+        name: 'Lunes y Miércoles',
         time: [
-          'Martes y Jueves 3:45pm - 4:30pm',
-          'Solo Sábados 4:00pm - 5:00pm',
+          '3:30pm - 4:30pm (4 años)',
+          '4:30pm - 5:30pm (6 & 7 años)',
+          '5:30pm - 7:00pm (Avanzadas)',
+          '7:00pm - 8:00pm (Adolescentes y Adultas principiantes)',
         ],
       },
       {
-        name: '4 años: Pre-Primary 2',
+        name: 'Martes y Jueves',
         time: [
-          'Lunes y Miércoles 3:00pm - 4:00pm ',
-          'Solo Sábados 4:00pm - 5:00pm',
+          '3:45pm - 4:30pm (3 años)',
+          '4:30pm - 5:30pm (5 años)',
+          '5:30pm - 6:30pm (8 - 11 años)',
         ],
       },
       {
-        name: '5 & 6 años: Primary ',
+        name: 'Sábados',
         time: [
-          'Martes y Jueves 4:30pm - 5:30pm ',
-          'Solo Sábados 3:00pm - 4:00pm',
+          '10:00am - 11:00am (5 & 6 años)',
+          '11:00am - 12:00pm (3 & 4 años)',
+          '12:00pm - 01:00pm (Adolescentes y Adultas principiantes)',
         ],
-      },
-      {
-        name: '6 & 7 años: Grado 1',
-        time: 'Lunes y Miércoles 4:00pm - 5:00pm',
-      },
-      {
-        name: '8 - 11 años: Grado 2 ',
-        time: 'Martes y Jueves 5:30pm - 6:30pm',
-      },
-      {
-        name: 'Adolescentes & Adultas principiantes',
-        time: [
-          'Lunes y Miércoles 6:30pm - 7:30pm',
-          'Solo Sábados 5:00pm - 6:00pm',
-        ],
-      },
-      {
-        name: 'Avanzadas: Intermediate',
-        time: 'Lunes y Miércoles 5:00pm - 6:30pm',
       },
     ],
   },
