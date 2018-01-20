@@ -40,7 +40,6 @@ module.exports = {
             options: {
               presets: ['env', 'stage-0', 'react'],
               plugins: [
-                'react-html-attrs',
                 'transform-decorators-legacy',
                 [
                   'transform-object-rest-spread',

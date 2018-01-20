@@ -12,36 +12,12 @@ import './root.scss';
 const history = createBrowserHistory();
 
 export default class Root extends PureComponent {
-
-  constructor() {
-    super();
-    this.state = {
-      loading: true,
-    };
-  }
-
   componentDidMount = () => {
     aos.init();
-    setTimeout(() => this.setState({ loading: false }), 1500);
   }
 
-  render = () => {
-    const { loading } = this.state;
-
-    if (loading) {
-      return <div class="loading">
-        <div class="loading__circle">
-          <div />
-        </div>
-        <div class="loading__text">
-          <div>Británica de Ballet</div>
-        </div>
-      </div>;
-    }
-
-    return <Router history={ history } onLoad={ this.completedLoad }>
+  render = () =>
+    <Router history={ history } onLoad={ this.completedLoad }>
       <Route exact path="/" component={ Layout } />
     </Router>;
-  }
-
 }

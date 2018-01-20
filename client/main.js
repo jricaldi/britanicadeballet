@@ -12,7 +12,7 @@ if (___OFFLINE_APP___) {
   });
 }
 const app = document.getElementById('app-content');
-console.log(stores);
+
 render(
   <Provider { ...stores }>
     <Root />

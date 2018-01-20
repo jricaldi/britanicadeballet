@@ -1544,6 +1544,10 @@ classlist-polyfill@^1.0.3:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/classlist-polyfill/-/classlist-polyfill-1.2.0.tgz#935bc2dfd9458a876b279617514638bcaa964a2e"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.1.x:
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.7.tgz#b9aea4f85679889cf3eae8b40349ec4ebdfdd032"
@@ -5885,12 +5889,6 @@ postcss-filter-plugins@^2.0.0:
   dependencies:
     postcss "^5.0.4"
     uniqid "^4.0.0"
-
-postcss-flexibility@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-flexibility/-/postcss-flexibility-2.0.0.tgz#5612c1b85d6595ed480966839928a41617a6a768"
-  dependencies:
-    postcss "^6.0.1"
 
 postcss-font-family-system-ui@^1.0.1:
   version "1.0.2"

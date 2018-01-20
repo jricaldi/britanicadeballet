@@ -11,8 +11,8 @@ const renderSections = (data, isClassSection, openMessageDialog) =>
 const SectionList = ({ scrollId, dataList, isClassSection, title, openMessageDialog }) => {
   const data = dataList;
 
-  return <section id={ scrollId } class="sectionList">
-    { title && <h2 class="sectionList__title">{ title }</h2> }
+  return <section id={ scrollId } className="sectionList">
+    { title && <h2 className="sectionList__title">{ title }</h2> }
     { renderSections(data, isClassSection, openMessageDialog) }
   </section>;
 };

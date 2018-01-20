@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import $ from 'jquery';
 import Scroll from 'react-scroll';
 import { TweenLite, Power2, Power1 } from 'gsap';
@@ -8,7 +8,7 @@ import caret from '../../../static/images/caret.png';
 
 const scroll = Scroll.animateScroll;
 
-export default class Home extends PureComponent {
+export default class Home extends Component {
 
   componentDidMount = () => {
     $(window).on('scroll', () => {
@@ -18,9 +18,11 @@ export default class Home extends PureComponent {
     });
   }
 
-  imageLoaded = () => {
-    const image = this.image;
-    TweenLite.to(image, 2, { opacity: 1, ease: Power1.easeInOut });
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.isLoadedPage) {
+      const image = this.image;
+      TweenLite.to(image, 2, { opacity: 1, ease: Power1.easeInOut });
+    }
   }
 
   goAboutSection = () => {
@@ -29,15 +31,14 @@ export default class Home extends PureComponent {
   }
 
   render = () =>
-    <section id="id-home" class="home" ref={ node => (this.home = node) }>
-      <div class="home__mainImage">
-        <img class="home__mainImage__image" src={ fondoInicio }
+    <section id="id-home" className="home" ref={ node => (this.home = node) }>
+      <div className="home__mainImage">
+        <img className="home__mainImage__image" src={ fondoInicio }
                                             alt="Academia Británica de Ballet"
-                                            onLoad={ this.imageLoaded }
                                             ref={ node => (this.image = node) } />
       </div>
-      <div class="home__caret">
-        <a class="home__caret__image" onClick={ this.goAboutSection }>
+      <div className="home__caret">
+        <a className="home__caret__image" onClick={ this.goAboutSection }>
           <img src={ caret } alt="caret" />
         </a>
       </div>

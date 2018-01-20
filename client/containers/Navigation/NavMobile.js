@@ -16,28 +16,28 @@ export default class NavMobile extends PureComponent {
   }
 
   render = () =>
-    <div class="navMobile">
-      <Slink to="id-home" class="navMobile__logo" smooth="easeInOutCubic">
+    <div className="navMobile">
+      <Slink to="id-home" className="navMobile__logo" smooth="easeInOutCubic">
         <img src={ logo } alt="Británica de ballet" />
       </Slink>
       <nav role="navigation">
-        <ul class="navMobile__menu" ref={ node => (this.mainNav = node) }>
+        <ul className="navMobile__menu" ref={ node => (this.mainNav = node) }>
           <li><Slink to="id-clases-ballet" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Ballet</Slink></li>
           <li><Slink to="id-clases-danza" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Danza Contemporánea</Slink></li>
           <li><Slink to="id-profesoras" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Profesoras</Slink></li>
           <li><Slink to="id-contacto" smooth="easeInOutCubic" onClick={ this.showMobileNav }>Contactos</Slink></li>
-          <div class="navMobile__menu__logo">
+          <div className="navMobile__menu__logo">
             <Slink to="id-home" smooth="easeInOutCubic" style={ { cursor: 'pointer' } }>
               <img src={ logo } alt="Británica de ballet" onClick={ this.showMobileNav } />
             </Slink>
           </div>
         </ul>
         <div onClick={ this.showMobileNav } className="navMobile__wrap" />
-        <div class="navMobile__action" >
-          <a class="navMobile__action__icon">
-            <div class="menui top-menu" ref={ node => (this.topMenu = node) } />
-            <div class="menui mid-menu" ref={ node => (this.midMenu = node) } />
-            <div class="menui bottom-menu" ref={ node => (this.bottomMenu = node) } />
+        <div className="navMobile__action" >
+          <a className="navMobile__action__icon">
+            <div className="menui top-menu" ref={ node => (this.topMenu = node) } />
+            <div className="menui mid-menu" ref={ node => (this.midMenu = node) } />
+            <div className="menui bottom-menu" ref={ node => (this.bottomMenu = node) } />
           </a>
         </div>
       </nav>
