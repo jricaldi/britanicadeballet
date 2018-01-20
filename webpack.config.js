@@ -3,7 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const postcssImport = require('postcss-smart-import');
 const postnext = require('postcss-cssnext');
-const postcssFlexibility = require('postcss-flexibility');
 
 const clientPath = path.resolve('client');
 const distPath = path.resolve(__dirname, 'dist');
@@ -74,7 +73,6 @@ module.exports = {
               plugins: [
                 postcssImport,
                 postnext,
-                postcssFlexibility,
               ],
             },
           },

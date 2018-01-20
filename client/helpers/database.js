@@ -2,7 +2,7 @@ import profesoraMilagros from '../../static/images/profesora-milagros.jpg';
 import profesoraDiana from '../../static/images/profesora-diana.jpg';
 import profesoraMargarita from '../../static/images/profesora-margarita.jpg';
 
-import ballet from '../../static/images/clases/ballet.jpg';
+import ballet from '../../static/images/clases/ballet-2018.jpg';
 import musica from '../../static/images/clases/musica.jpg';
 import danzaContemporanea from '../../static/images/clases/danzaContemporanea.jpg';
 import musicoterapia from '../../static/images/clases/musicoterapia.jpg';

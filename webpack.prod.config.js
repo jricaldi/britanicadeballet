@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
 const postcssImport = require('postcss-smart-import');
 const postnext = require('postcss-cssnext');
-const postcssFlexibility = require('postcss-flexibility');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const clientPath = path.resolve('client');
@@ -73,7 +72,6 @@ module.exports = {
                 plugins: [
                   postcssImport,
                   postnext,
-                  postcssFlexibility,
                 ],
               },
             },
