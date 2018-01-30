@@ -21,8 +21,7 @@ export default class Contacto extends PureComponent {
             </p>
             <p>
               Atención presencial: <br /><br />
-              &nbsp;&nbsp; Lunes y Miércoles 3:00pm - 6:30pm <br /><br />
-              &nbsp;&nbsp; Martes y Jueves 3:30pm - 6:30pm <br /><br />
+              &nbsp;&nbsp; Lunes a Jueves 3:30pm - 6:30pm <br /><br />
               &nbsp;&nbsp; Sábados 10:00am - 1:00pm
             </p>
           </div>

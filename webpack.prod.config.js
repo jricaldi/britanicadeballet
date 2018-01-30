@@ -85,7 +85,24 @@ module.exports = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           'url-loader?limit=10000',
-          'img-loader',
+          {
+            loader: 'img-loader',
+            options: {
+              enabled: true,
+              gifsicle: {
+                interlaced: true,
+              },
+              mozjpeg: {
+                quality: 50,
+                progressive: true,
+              },
+              optipng: true,
+              pngquant: {
+                floyd: 0.5,
+                speed: 2,
+              },
+            },
+          },
         ],
       },
     ],

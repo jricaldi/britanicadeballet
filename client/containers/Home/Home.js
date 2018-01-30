@@ -3,7 +3,7 @@ import $ from 'jquery';
 import Scroll from 'react-scroll';
 import { TweenLite, Power2, Power1 } from 'gsap';
 import './home.scss';
-import fondoInicio from '../../../static/images/fondo-inicio-2018.jpg';
+import fondoInicio from '../../../static/images/fondo-inicio-2017.jpg';
 import caret from '../../../static/images/caret.png';
 
 const scroll = Scroll.animateScroll;

@@ -2,7 +2,7 @@ import profesoraMilagros from '../../static/images/profesora-milagros.jpg';
 import profesoraDiana from '../../static/images/profesora-diana.jpg';
 import profesoraMargarita from '../../static/images/profesora-margarita.jpg';
 
-import ballet from '../../static/images/clases/ballet-2018.jpg';
+import ballet from '../../static/images/clases/ballet-2017.jpg';
 import musica from '../../static/images/clases/musica.jpg';
 import danzaContemporanea from '../../static/images/clases/danzaContemporanea.jpg';
 import musicoterapia from '../../static/images/clases/musicoterapia.jpg';
@@ -21,7 +21,7 @@ export const dataProfesoras = [
       },
       {
         name: 'Adolescentes & Adultas principiantes',
-        time: 'Lunes y Miércoles 7:00pm - 8:00pm',
+        time: ['Lunes y Miércoles 7:00pm - 8:00pm', 'Sabados 12:00pm - 1:30pm'],
       },
     ],
   },
@@ -69,10 +69,6 @@ export const dataProfesoras = [
         name: '3 & 4 años',
         time: 'Sábados 11:00am - 12:00pm',
       },
-      {
-        name: 'Adolescentes & Adultas principiantes',
-        time: 'Sábados 12:00pm - 1:00pm',
-      },
     ],
   },
 ];
@@ -109,7 +105,7 @@ export const dataClases = [
         time: [
           '10:00am - 11:00am (5 & 6 años)',
           '11:00am - 12:00pm (3 & 4 años)',
-          '12:00pm - 01:00pm (Adolescentes y Adultas principiantes)',
+          '12:00pm - 1:30pm (Adolescentes y Adultas principiantes)',
         ],
       },
     ],
