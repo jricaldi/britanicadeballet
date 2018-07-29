@@ -12,6 +12,7 @@ export default class Contacto extends PureComponent {
         </div>
         <div className="contacto__box__info">
           <div className="contacto__box__info__address">
+            <p><b>El 28, 30 y 31 de julio nuestra academia estará cerrada por vacaciones.</b></p><br /><br />
             <a href="tel:+5114481113">+51 1 448-1113</a>
             <p>
               Av. Alfredo Franco 200, Urb. Chama, Surco - Lima
