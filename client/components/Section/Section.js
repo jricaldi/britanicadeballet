@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import renderHTML from 'react-render-html';
 import './section.scss';
 import consultButton from '../../../static/images/write-icon.svg';
 
@@ -27,7 +28,7 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
     </div>
     <div className={ cn('section__details', backgroundSection) }>
       <div className="section__details__info">
-        { info.details }
+        { renderHTML(info.details) }
       </div>
       { isClassSection && info.enableSendEmails && renderDialogOpenButton(openMessageDialog) }
     </div>
