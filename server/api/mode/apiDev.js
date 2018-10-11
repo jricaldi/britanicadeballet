@@ -1,4 +1,6 @@
 import webpack from 'webpack';
+import devMidleware from 'webpack-dev-middleware';
+import hotMiddleware from 'webpack-hot-middleware';
 import config from '../../config/config';
 
 export const startApiForDevMode = (webpackConfig, app) => {
@@ -18,10 +20,13 @@ export const startApiForDevMode = (webpackConfig, app) => {
       colors: true,
     },
   };
-  const middleware = require('webpack-dev-middleware')(compiler, serverOptions); //eslint-disable-line
+  console.log('dev!!!!');
+  const middleware = devMidleware(compiler, serverOptions);
 
   app.use(middleware);
-  app.use(require('webpack-hot-middleware')(compiler)); //eslint-disable-line
+
+  app.use(hotMiddleware(compiler));
+
   app.get('*', (req, res) => {
     res.write(middleware.fileSystem.readFileSync(`${webpackConfig.output.path}/${config.indexFile}`));
     res.end();

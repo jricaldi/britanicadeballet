@@ -1,23 +1,24 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import aos from 'aos';
 import 'aos/dist/aos.css';
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
+import { hot } from 'react-hot-loader';
+import { Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import Layout from '../Layout/Layout';
 import './root.scss';
 
 const history = createBrowserHistory();
 
-export default class Root extends PureComponent {
+class Root extends Component {
   componentDidMount = () => {
     aos.init();
-  }
+  };
 
-  render = () =>
+  render = () => (
     <Router history={ history } onLoad={ this.completedLoad }>
       <Route exact path="/" component={ Layout } />
-    </Router>;
+    </Router>
+  );
 }
+
+export default hot(module)(Root);

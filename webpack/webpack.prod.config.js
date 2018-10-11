@@ -137,11 +137,11 @@ module.exports = {
       },
       ___OFFLINE_APP___: true,
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false,
+    //   },
+    // }),
     new webpack.BannerPlugin({ banner, raw: true, entryOnly: true }),
     new OfflinePlugin({
       excludes: ['**/*.map'],

@@ -16,32 +16,36 @@ export default class Layout extends Component {
   constructor() {
     super();
     this.state = {
-      loading: false,
+      // loading: false,
     };
   }
 
-  render = () => {
+  render() {
+    console.log('application => ', this.props.application);
     const { isLoadedPage } = this.props.application;
+    console.log('isLoadedPage => ', isLoadedPage);
     const showMain = isLoadedPage ? 'show' : 'hide';
     const showLoading = !isLoadedPage ? 'show' : 'hide';
-    return <div>
-      <div className={ cn(showMain) }>
-        <MessageDialog />
-        <Navigation />
-        <Home isLoadedPage={ isLoadedPage } />
-        <About />
-        <ListaClases />
-        <ListaProfesoras />
-        <Contacto />
+    return (
+      <div>
+        <div className={ cn(showMain) }>
+          <MessageDialog />
+          <Navigation />
+          <Home isLoadedPage={ isLoadedPage } />
+          <About />
+          <ListaClases />
+          <ListaProfesoras />
+          <Contacto />
+        </div>
+        <div className={ cn('loading', showLoading) }>
+          <div className="loading__circle">
+            <div />
+          </div>
+          <div className="loading__text">
+            <div>Británica de Ballet</div>
+          </div>
+        </div>
       </div>
-      <div className={ cn('loading', showLoading) }>
-        <div className="loading__circle">
-          <div />
-        </div>
-        <div className="loading__text">
-          <div>Británica de Ballet</div>
-        </div>
-      </div>;
-    </div>;
-  }
+    );
+  };
 }

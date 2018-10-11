@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import bodyParser from 'body-parser';
-import webpackConfig from '../webpack.config';
+import webpackConfig from '../webpack/webpack.config.babel';
 import { startApiForDevMode } from './api/mode/apiDev';
 import { startApiForProdMode } from './api/mode/apiProd';
 import * as actions from './api/actions';

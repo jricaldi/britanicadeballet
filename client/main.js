@@ -11,10 +11,12 @@ if (___OFFLINE_APP___) {
     onUpdateReady: () => offlinePluginRuntime.applyUpdate(),
   });
 }
+
 const app = document.getElementById('app-content');
 
 render(
   <Provider { ...stores }>
     <Root />
   </Provider>,
-  app);
+  app,
+);

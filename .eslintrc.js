@@ -39,8 +39,13 @@ module.exports = {
     "settings": {
       "import/resolver": {
         "webpack": {
-          "config": "webpack.config.js",
+          "config": "webpack/webpack.config.babel.js",
         }
+      }
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "legacyDecorators": true
       }
     },
     "globals": {
