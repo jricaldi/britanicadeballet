@@ -12,7 +12,7 @@ export default class Contacto extends PureComponent {
         </div>
         <div className="contacto__box__info">
           <div className="contacto__box__info__address">
-            { <p><b>Entre el 19 - 26 de diciembre nuestra academia estará cerrada por vacaciones institucionales.</b></p> }
+            { /* <p><b>Entre el 19 - 26 de diciembre nuestra academia estará cerrada por vacaciones institucionales.</b></p> */}
             <br /><br />
             <a href="tel:+5114481113">+51 1 448-1113</a>
             <p>
