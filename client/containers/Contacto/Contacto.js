@@ -12,7 +12,7 @@ export default class Contacto extends PureComponent {
         </div>
         <div className="contacto__box__info">
           <div className="contacto__box__info__address">
-            { /* <p><b>Entre el 19 - 26 de diciembre nuestra academia estará cerrada por vacaciones institucionales.</b></p> */}
+            {<p><b>Nuestra academia se encuentra cerrada por vacaciones de fin de año.<br /><br />Atención presencial desde el jueves 02 de enero 2020.</b></p> }
             <br /><br />
             <a href="tel:+5114481113">+51 1 448-1113</a>
             <p>
@@ -21,11 +21,13 @@ export default class Contacto extends PureComponent {
             <p>
               britanicaballet@gmail.com
             </p>
-            <p>
-              Atención presencial: <br /><br />
-              &nbsp;&nbsp; Lunes a Jueves 3:30pm - 6:30pm <br /><br />
-              &nbsp;&nbsp; Sábados 10:00am - 1:00pm
-            </p>
+            {/*
+                <p>
+                  Atención presencial: <br /><br />
+                  &nbsp;&nbsp; Lunes a Jueves 3:30pm - 6:30pm <br /><br />
+                  &nbsp;&nbsp; Sábados 10:00am - 1:00pm
+                </p>
+                 */}
           </div>
           <div className="contacto__box__info__map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.7176653663755!2d-77.00035304905748!3d-12.131459991368802!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8087d4a59a9%3A0x4a3ecbdc4a007ceb!2sAcademia+Brit%C3%A1nica+de+Ballet!5e0!3m2!1ses-419!2sus!4v1498017371971" allowFullScreen />
