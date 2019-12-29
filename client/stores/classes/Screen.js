@@ -1,4 +1,4 @@
-import { observable, computed } from 'mobx';
+import { observable } from "mobx";
 
 export default class Screen {
   @observable innerWidth;
@@ -10,19 +10,19 @@ export default class Screen {
     };
   }
 
-  @computed get isDownXSmall() {
+  get isDownXSmall() {
     return this.innerWidth <= 576;
   }
 
-  @computed get isDownSmall() {
+  get isDownSmall() {
     return this.innerWidth <= 768;
   }
 
-  @computed get isDownMedium() {
+  get isDownMedium() {
     return this.innerWidth <= 992;
   }
 
-  @computed get isDownlarge() {
+  get isDownlarge() {
     return this.innerWidth <= 1200;
   }
 }

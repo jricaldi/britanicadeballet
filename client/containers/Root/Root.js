@@ -1,23 +1,26 @@
-import React, { PureComponent } from 'react';
-import aos from 'aos';
-import 'aos/dist/aos.css';
-import {
-  BrowserRouter as Router,
-  Route,
-} from 'react-router-dom';
-import createBrowserHistory from 'history/createBrowserHistory';
-import Layout from '../Layout/Layout';
-import './root.scss';
+import React, { Component } from "react";
+import aos from "aos";
+import "aos/dist/aos.css";
+import { Router, Route } from "react-router-dom";
+import Layout from "../Layout/Layout";
+import { observer } from "mobx-react";
+import "./root.scss";
 
-const history = createBrowserHistory();
-
-export default class Root extends PureComponent {
+@observer
+export default class Root extends Component {
   componentDidMount = () => {
     aos.init();
-  }
+  };
 
-  render = () =>
-    <Router history={ history } onLoad={ this.completedLoad }>
-      <Route exact path="/" component={ Layout } />
-    </Router>;
+  render({ history } = this.props) {
+    return (
+      <Router history={history}>
+        <Route
+          exact
+          path="/"
+          render={routeProps => <Layout {...routeProps} />}
+        />
+      </Router>
+    );
+  }
 }

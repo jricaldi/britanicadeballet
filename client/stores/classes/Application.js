@@ -1,23 +1,16 @@
-import { observable } from 'mobx';
-import $ from 'jquery';
-import axios from 'axios';
+import { observable } from "mobx";
 
 export default class Application {
-  @observable openMessageDialog = false;
-  @observable isLoadedPage = false;
+  @observable _isLoadedPage = false;
 
   constructor() {
-    $(window).on('load', () => {
-      this.isLoadedPage = true;
+    window.addEventListener("load", () => {
+      console.log("jejeje");
+      this._isLoadedPage = true;
     });
   }
 
-  toggleDialog = () => {
-    if (this.openMessageDialog) this.openMessageDialog = false;
-    else this.openMessageDialog = true;
-  }
-
-  sendMessage = message => {
-    axios.post('/sendMail', message);
+  get isLoadedPage() {
+    return this._isLoadedPage;
   }
 }

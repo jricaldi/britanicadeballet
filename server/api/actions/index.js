@@ -1,3 +1,0 @@
-export {
-  sendMail,
-} from './mail';

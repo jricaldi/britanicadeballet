@@ -1,21 +1,26 @@
 {
-  "presets": [
-    ["env", {
-      "module": false,
-      "targets": {
-        "node": "current"
-      }
-    }],
-    "stage-0",
-    "react"
-  ],
   "plugins": [
-    ["transform-object-rest-spread", { "useBuiltIns": true }]
-  ],
-  "ignore": [
-    "node_modules/**/*.js",
-    "server/bundles/**/*.js",
-    "server/bin/**/*.js"
-  ],
-  "minified": true
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-export-namespace-from",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "helpers": true,
+        "regenerator": true
+      }
+    ]
+  ]
 }

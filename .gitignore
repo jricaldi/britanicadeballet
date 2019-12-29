@@ -1,5 +1,5 @@
 node_modules
 dist
 npm-debug.log
-bundle-server
 yarn-error.log
+.cache
