@@ -5,7 +5,6 @@ export default class Application {
 
   constructor() {
     window.addEventListener("load", () => {
-      console.log("jejeje");
       this._isLoadedPage = true;
     });
   }

@@ -1,7 +1,13 @@
 {
-  "root": "dist/",
+  "root": "dist",
   "routes": {
-    "/images/*": "/client/images/",
     "/**": "index.html"
+  },
+  "https_only": true,
+  "clean_urls": false,
+  "headers": {
+    "/**": {
+      "Access-Control-Allow-Origin": "*"
+    }
   }
 }
