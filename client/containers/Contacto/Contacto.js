@@ -28,10 +28,13 @@ const Contacto = () => {
           >
             youtube
           </a>
+          <a href="mailto:britanicaballet@gmail.com?Subject=Consulta%20de%20horarios-clases%20privadas">
+            Correo
+          </a>
         </div>
         <div className="contacto__box__info">
           <div className="contacto__box__info__address">
-            {
+            {/*
               <p>
                 <b>
                   Nuestra academia se encuentra cerrada por vacaciones de fin de
@@ -40,13 +43,16 @@ const Contacto = () => {
                   <br />
                   Atención presencial desde el jueves 02 de enero 2020.
                 </b>
-              </p>
-            }
+              </p> */}
             <br />
             <br />
             <a href="tel:+5114481113">+51 1 448-1113</a>
             <p>Av. Alfredo Franco 200, Urb. Chama, Surco - Lima</p>
-            <p>britanicaballet@gmail.com</p>
+            <p>
+              <a href="mailto:britanicaballet@gmail.com?Subject=Consulta%20de%20horarios-clases%20privadas">
+                britanicaballet@gmail.com
+              </a>
+            </p>
             {/*
                 <p>
                   Atención presencial: <br /><br />
