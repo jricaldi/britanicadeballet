@@ -53,13 +53,15 @@ const Contacto = () => {
                 britanicaballet@gmail.com
               </a>
             </p>
-            {/*
-                <p>
-                  Atención presencial: <br /><br />
-                  &nbsp;&nbsp; Lunes a Jueves 3:30pm - 6:30pm <br /><br />
-                  &nbsp;&nbsp; Sábados 10:00am - 1:00pm
-                </p>
-                 */}
+            {
+              <p>
+                Atención presencial & telefónica: <br />
+                <br />
+                &nbsp;&nbsp; Lunes a Jueves 3:30pm - 6:30pm <br />
+                <br />
+                &nbsp;&nbsp; Sábados 10:00am - 1:00pm
+              </p>
+            }
           </div>
           <div className="contacto__box__info__map">
             <iframe
