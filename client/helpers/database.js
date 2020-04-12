@@ -1,11 +1,17 @@
+import React from "react";
+import Scroll from "react-scroll";
+
 import profesoraMilagros from "../images/profesora-milagros.jpg";
 import profesoraDiana from "../images/profesora-diana.jpg";
 import profesoraMargarita from "../images/profesora-margarita.jpg";
 
+import clasesEnLinea from "../images/clases/clasesEnLinea.jpg";
 import ballet from "../images/clases/ballet-2017.jpg";
 import musica from "../images/clases/musica.jpg";
 import danzaContemporanea from "../images/clases/danzaContemporanea.jpg";
 import musicoterapia from "../images/clases/musicoterapia.jpg";
+
+const Slink = Scroll.Link;
 
 export const dataProfesoras = [
   {
@@ -77,6 +83,47 @@ export const dataProfesoras = [
 ];
 
 export const dataClases = [
+  {
+    name: "Clases en línea",
+    details: (
+      <>
+        Ofrecemos clases remotas grupales e individuales tanto de&nbsp;
+        <Slink to="id-clases-ballet" smooth="easeInOutCubic" offset={-75}>
+          ballet
+        </Slink>
+        ,&nbsp;
+        <Slink to="id-clases-musica" smooth="easeInOutCubic" offset={-75}>
+          música
+        </Slink>{" "}
+        e idiomas. Chequea nuestros horarios de clases grupales&nbsp;
+        <Slink
+          to="id-clases-ballet-horarios"
+          smooth="easeInOutCubic"
+          offset={-75}
+        >
+          acá.
+        </Slink>{" "}
+        Para una mejor interacción entre profesora & alumnas y asegurar la
+        privacidad de nuestra comunidad, dictamos las clases usando{" "}
+        <a href="https://zoom.us" target="_blank">
+          zoom
+        </a>
+        .
+      </>
+    ),
+    noColunmsText: true,
+    image: clasesEnLinea,
+    showSchedules: true,
+    showClass: true,
+    enableSendEmails: false,
+    scrollId: "id-clases-en-linea",
+    schedules: [
+      {
+        name:
+          'Solicita más información a nuestro correo: <a style="color:#3e3a3a" href="mailto:britanicaballet@gmail.com?Subject=Consulta%20de%20horarios-clases%20privadas">britanicaballet@gmail.com</a>'
+      }
+    ]
+  },
   {
     name: "Ballet",
     details:

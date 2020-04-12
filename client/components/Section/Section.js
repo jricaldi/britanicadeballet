@@ -20,6 +20,13 @@ const renderTime = time => {
   return time.map((t, index) => <div key={index}>{t}</div>);
 };
 
+const renderData = details => {
+  if (typeof details === "string") {
+    return renderHTML(details);
+  }
+  return details;
+};
+
 const Section = ({ info, isClassSection, openMessageDialog }) => {
   const backgroundSection = isClassSection ? "classSection" : "classTeachers";
   return (
@@ -51,12 +58,18 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
         )}
       </div>
       <div className={cn("section__details", backgroundSection)}>
-        <div className="section__details__info">{renderHTML(info.details)}</div>
+        <div
+          className={cn("section__details__info", {
+            noColunmsText: info.noColunmsText
+          })}
+        >
+          {renderData(info.details)}
+        </div>
         {isClassSection &&
           info.enableSendEmails &&
           renderDialogOpenButton(openMessageDialog)}
       </div>
-      <div className="section__horarios">
+      <div className="section__horarios" id={`${info.scrollId}-horarios`}>
         {!info.showSchedules && (
           <div className="section__horarios__noShedules">
             <div>Pronto estaremos publicando nuevos horarios</div>
@@ -66,7 +79,7 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
           info.schedules.map(schedule => (
             <div key={schedule.name} className="section__horarios__single">
               <div className="section__horarios__single__name">
-                <div>{schedule.name}</div>
+                <div>{renderData(schedule.name)}</div>
               </div>
               {schedule.time && (
                 <div className="section__horarios__single__time">

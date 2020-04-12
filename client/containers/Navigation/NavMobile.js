@@ -24,6 +24,16 @@ export default class NavMobile extends PureComponent {
           <ul className="navMobile__menu" ref={node => (this.mainNav = node)}>
             <li>
               <Slink
+                to="id-clases-en-linea"
+                offset={-75}
+                smooth="easeInOutCubic"
+                onClick={this.showMobileNav}
+              >
+                Clases en línea
+              </Slink>
+            </li>
+            <li>
+              <Slink
                 to="id-clases-ballet"
                 offset={-75}
                 smooth="easeInOutCubic"

@@ -1,5 +1,5 @@
-@import '../../sass/_colors.scss';
-@import '../../sass/_mixins.scss';
+@import "../../sass/_colors.scss";
+@import "../../sass/_mixins.scss";
 
 .section {
   width: 100%;
@@ -31,7 +31,8 @@
     @include query(down-medium) {
       margin-top: -25px;
     }
-    &__name, &__surname {
+    &__name,
+    &__surname {
       display: block;
       font-size: (60rem/16);
       @include query(down-medium) {
@@ -43,7 +44,8 @@
     }
   }
 
-  &__details, &__horarios {
+  &__details,
+  &__horarios {
     padding: 0 10%;
     padding-top: 30px;
     line-height: 2em;
@@ -51,7 +53,6 @@
   }
 
   &__details {
-
     &__info {
       color: $color5;
       text-indent: 30px;
@@ -60,6 +61,16 @@
       padding-bottom: 3em;
       @include query(down-medium) {
         column-count: 1;
+      }
+
+      a {
+        text-decoration: underline;
+        cursor: pointer;
+        color: unset;
+      }
+
+      &.noColunmsText {
+        column-count: unset;
       }
     }
 
@@ -87,7 +98,6 @@
         width: 100%;
       }
     }
-
   }
 
   &__horarios {
@@ -107,7 +117,7 @@
     &__single {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid #EEE;
+      border-bottom: 1px solid #eee;
       padding: 10px 0;
       @include query(down-medium) {
         margin: 0;
@@ -118,7 +128,8 @@
         border-bottom: none;
       }
 
-      &__name, &__time {
+      &__name,
+      &__time {
         width: 50%;
         @include query(down-medium) {
           width: 100%;
@@ -160,5 +171,5 @@
 }
 
 .classTeachers {
-  background-color: rgba(195,215,238,0.3);
+  background-color: rgba(195, 215, 238, 0.3);
 }
