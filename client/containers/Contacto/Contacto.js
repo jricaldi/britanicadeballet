@@ -55,11 +55,12 @@ const Contacto = () => {
             </p>
             {
               <p>
-                Atención presencial & telefónica: <br />
                 <br />
-                &nbsp;&nbsp; Lunes a Jueves 3:30pm - 6:30pm <br />
                 <br />
-                &nbsp;&nbsp; Sábados 10:00am - 1:00pm
+                Atención telefónica:
+                <br />
+                <br />
+                Miércoles, Viernes y Sábados 10am - 6pm
               </p>
             }
           </div>

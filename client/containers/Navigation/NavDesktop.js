@@ -1,24 +1,26 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import Scroll from "react-scroll";
+import { observer } from "mobx-react";
 import Headroom from "headroom.js";
 import logo from "../../images/logo.png";
 import "./navDesktop.scss";
 
 const Slink = Scroll.Link;
 
-export default class NavDesktop extends PureComponent {
-  componentDidMount = () => {
+@observer
+export default class NavDesktop extends Component {
+  componentDidMount() {
     const headroom = new Headroom(this.navDesktop, {
-      tolerance: 10
+      tolerance: 10,
     });
     headroom.init();
-  };
+  }
 
   render() {
     return (
       <div
         className="navDesktop"
-        ref={node => {
+        ref={(node) => {
           this.navDesktop = node;
         }}
       >

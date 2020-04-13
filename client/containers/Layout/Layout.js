@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
 import cn from "classnames";
+import $ from "jquery";
+import aos from "aos";
 import ListaProfesoras from "../Profesoras/ListaProfesoras";
 import ListaClases from "../Clases/ListaClases";
 import Contacto from "../Contacto/Contacto";
@@ -8,7 +10,9 @@ import About from "../About/About";
 import Home from "../Home/Home";
 import Navigation from "../Navigation/Navigation";
 import MessageDialog from "../MessageDialog/MessageDialog";
+
 import "./layout.scss";
+import "aos/dist/aos.css";
 
 @inject("application")
 @observer
@@ -16,8 +20,14 @@ export default class Layout extends Component {
   constructor() {
     super();
     this.state = {
-      loading: false
+      loading: false,
     };
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      aos.init();
+    }, 1500);
   }
 
   render() {

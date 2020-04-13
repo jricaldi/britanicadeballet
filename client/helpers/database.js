@@ -24,13 +24,13 @@ export const dataProfesoras = [
     schedules: [
       {
         name: "Avanzadas",
-        time: "Lunes y Miércoles 5:30pm - 7:00pm"
+        time: "Lunes y Miércoles 5:30pm - 7:00pm",
       },
       {
         name: "Adolescentes & Adultas principiantes",
-        time: ["Lunes y Miércoles 7:00pm - 8:00pm", "Sabados 12:00pm - 1:30pm"]
-      }
-    ]
+        time: ["Lunes y Miércoles 7:00pm - 8:00pm", "Sabados 12:00pm - 1:30pm"],
+      },
+    ],
   },
   {
     name: "Milagros",
@@ -42,17 +42,17 @@ export const dataProfesoras = [
     schedules: [
       {
         name: "3 años",
-        time: "Martes y Jueves 3:45pm - 4:30pm"
+        time: "Martes y Jueves 3:45pm - 4:30pm",
       },
       {
         name: "5 años",
-        time: "Martes y Jueves 4:30pm - 5:30pm"
+        time: "Martes y Jueves 4:30pm - 5:30pm",
       },
       {
         name: "8 - 11 años",
-        time: "Martes y Jueves 5:30pm - 6:30pm"
-      }
-    ]
+        time: "Martes y Jueves 5:30pm - 6:30pm",
+      },
+    ],
   },
   {
     name: "Diana",
@@ -64,22 +64,22 @@ export const dataProfesoras = [
     schedules: [
       {
         name: "4 años",
-        time: "Lunes y Miércoles 3:30pm - 4:30pm"
+        time: "Lunes y Miércoles 3:30pm - 4:30pm",
       },
       {
         name: "6 & 7 años",
-        time: "Lunes y Miércoles 4:30pm - 5:30pm"
+        time: "Lunes y Miércoles 4:30pm - 5:30pm",
       },
       {
         name: "5 & 6 años",
-        time: "Sábados 10:00am - 11:00am"
+        time: "Sábados 10:00am - 11:00am",
       },
       {
         name: "3 & 4 años",
-        time: "Sábados 11:00am - 12:00pm"
-      }
-    ]
-  }
+        time: "Sábados 11:00am - 12:00pm",
+      },
+    ],
+  },
 ];
 
 export const dataClases = [
@@ -95,7 +95,7 @@ export const dataClases = [
         <Slink to="id-clases-musica" smooth="easeInOutCubic" offset={-75}>
           música
         </Slink>{" "}
-        e idiomas. Chequea nuestros horarios de clases grupales&nbsp;
+        e idiomas. Infórmate de nuestros horarios de clases grupales&nbsp;
         <Slink
           to="id-clases-ballet-horarios"
           smooth="easeInOutCubic"
@@ -108,7 +108,7 @@ export const dataClases = [
         <a href="https://zoom.us" target="_blank">
           zoom
         </a>
-        .
+        . Somos miembros de la agencia de servicios online Lima Lista.
       </>
     ),
     noColunmsText: true,
@@ -120,14 +120,14 @@ export const dataClases = [
     schedules: [
       {
         name:
-          'Solicita más información a nuestro correo: <a style="color:#3e3a3a" href="mailto:britanicaballet@gmail.com?Subject=Consulta%20de%20horarios-clases%20privadas">britanicaballet@gmail.com</a>'
-      }
-    ]
+          'Solicita más información a nuestro correo: <a style="color:#3e3a3a" href="mailto:britanicaballet@gmail.com?Subject=Consulta%20de%20horarios-clases%20privadas">britanicaballet@gmail.com</a>',
+      },
+    ],
   },
   {
     name: "Ballet",
     details:
-      "Entendemos que al ser parte del desarrollo artístico de nuestras alumnas, estamos formando el crecimiento humano en cada una de ellas. Tenemos el privilegio de cumplir esta labor  desde 1956. Seguimos la metodología de ballet clásico de la Royal Academy of Dance de Inglaterra que introdujo a Lima nuestra fundadora la maestra inglesa Rosina Müller. Fuimos los primeros en introducir el Tap en el Perú y es por eso que a partir del grado Pre-primary 2 nuestras alumnas se forman con dos tipos de danza: la hora de clase se divide en 45min de ballet y 15min de Tap. Nuestras alumnas se benefician con descuentos en clases individuales de música. Ofrecemos clases de piano, canto y teoría musical en nuestra academia.",
+      "Actualmente todas nuestras clases se dictan de manera virtual. Entendemos que al ser parte del desarrollo artístico de nuestras alumnas, estamos formando el crecimiento humano en cada una de ellas. Tenemos el privilegio de cumplir esta labor  desde 1956. Seguimos la metodología de ballet clásico de la Royal Academy of Dance de Inglaterra que introdujo a Lima nuestra fundadora la maestra inglesa Rosina Müller. Fuimos los primeros en introducir el Tap en el Perú y es por eso que a partir del grado Pre-primary 2 nuestras alumnas se forman con dos tipos de danza: la hora de clase se divide en 45min de ballet y 15min de Tap. Nuestras alumnas se benefician con descuentos en clases individuales de música. Ofrecemos también de manera online clases de piano, canto, violín y teoría musical.",
     image: ballet,
     showSchedules: true,
     showClass: true,
@@ -140,31 +140,31 @@ export const dataClases = [
           "3:30pm - 4:30pm (4 años)",
           "4:30pm - 5:30pm (6 & 7 años)",
           "5:30pm - 7:00pm (Avanzadas)",
-          "7:00pm - 8:00pm (Adolescentes y Adultas principiantes)"
-        ]
+          "7:00pm - 8:00pm (Adolescentes y Adultas principiantes)",
+        ],
       },
       {
         name: "Martes y Jueves",
         time: [
           "3:45pm - 4:30pm (3 años)",
           "4:30pm - 5:30pm (5 años)",
-          "5:30pm - 6:30pm (8 - 11 años)"
-        ]
+          "5:30pm - 6:30pm (8 - 11 años)",
+        ],
       },
       {
         name: "Sábados",
         time: [
           "10:00am - 11:00am (5 & 6 años)",
           "11:00am - 12:00pm (3 & 4 años)",
-          "12:00pm - 1:30pm (Adolescentes y Adultas principiantes)"
-        ]
-      }
-    ]
+          "12:00pm - 1:30pm (Adolescentes y Adultas principiantes)",
+        ],
+      },
+    ],
   },
   {
     name: "Música",
     details:
-      'Expande tu desarrollo artístico con nuestras clases individuales de música. Ofrecemos clases de piano, canto, violín y teoría musical en nuestra academia. Nuestros profesores son musicólogos graduados de la Universidad de Heidelberg - Alemania. Solicita los horarios disponibles escribiéndonos al siguiente correo: <a style="color:#3e3a3a" href="mailto:britanicaballet@gmail.com?Subject=Consulta%20de%20horarios-clases%20privadas">britanicaballet@gmail.com</a>',
+      'Expande tu desarrollo artístico con nuestras clases individuales de música. Ofrecemos también de manera online clases de piano, canto, violín y teoría musical en nuestra academia. Nuestros profesores son musicólogos graduados de la Universidad de Heidelberg - Alemania. Solicita los horarios disponibles escribiéndonos al siguiente correo: <a style="color:#3e3a3a" href="mailto:britanicaballet@gmail.com?Subject=Consulta%20de%20horarios-clases%20privadas">britanicaballet@gmail.com</a>',
     image: musica,
     showSchedules: true,
     showClass: true,
@@ -172,9 +172,9 @@ export const dataClases = [
     scrollId: "id-clases-musica",
     schedules: [
       {
-        name: "Niños desde los 4 años, adolescentes y adultos"
-      }
-    ]
+        name: "Niños desde los 4 años, adolescentes y adultos",
+      },
+    ],
   },
   {
     name: "Danza",
@@ -189,9 +189,9 @@ export const dataClases = [
     schedules: [
       {
         name: "Adolescentes & Adultas principiantes",
-        time: "Jueves 6:30pm - 8:00pm"
-      }
-    ]
+        time: "Jueves 6:30pm - 8:00pm",
+      },
+    ],
   },
   {
     name: "Musicoterapia",
@@ -203,8 +203,8 @@ export const dataClases = [
     enableSendEmails: false,
     schedules: [
       {
-        name: "5 años en adelante"
-      }
-    ]
-  }
+        name: "5 años en adelante",
+      },
+    ],
+  },
 ];

@@ -1,4 +1,5 @@
 import React from "react";
+import { observer } from "mobx-react";
 import Scroll from "react-scroll";
 import "./about.scss";
 
@@ -17,4 +18,4 @@ const About = () => (
   </section>
 );
 
-export default About;
+export default observer(About);

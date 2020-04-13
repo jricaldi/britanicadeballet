@@ -1,10 +1,12 @@
-import React from 'react';
-import NavMobile from './NavMobile';
-import Header from '../../components/Header/Header';
+import React from "react";
+import { observer } from "mobx-react";
+import NavMobile from "./NavMobile";
+import Header from "../../components/Header/Header";
 
-const Navigation = () =>
+const Navigation = () => (
   <Header>
     <NavMobile />
-  </Header>;
+  </Header>
+);
 
-export default Navigation;
+export default observer(Navigation);

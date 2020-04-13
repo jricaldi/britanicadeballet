@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import $ from "jquery";
+import { observer } from "mobx-react";
 import Scroll from "react-scroll";
 import { TweenLite, Power2, Power1 } from "gsap";
 import "./home.scss";
@@ -8,21 +9,22 @@ import caret from "../../images/caret.png";
 
 const scroll = Scroll.animateScroll;
 
+@observer
 export default class Home extends Component {
-  componentDidMount = () => {
+  componentDidMount() {
     $(window).on("scroll", () => {
       const dy = $(window).scrollTop();
       const home = $(this.home);
       TweenLite.to(home, 0.1, { opacity: 1 - dy / 600, ease: Power2.easeOut });
     });
-  };
+  }
 
-  componentWillReceiveProps = nextProps => {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.isLoadedPage) {
       const image = this.image;
       TweenLite.to(image, 2, { opacity: 1, ease: Power1.easeInOut });
     }
-  };
+  }
 
   goAboutSection = () => {
     const heightVP = $(window).height();
@@ -31,13 +33,13 @@ export default class Home extends Component {
 
   render() {
     return (
-      <section id="id-home" className="home" ref={node => (this.home = node)}>
+      <section id="id-home" className="home" ref={(node) => (this.home = node)}>
         <div className="home__mainImage">
           <img
             className="home__mainImage__image"
             src={fondoInicio}
             alt="Academia Británica de Ballet"
-            ref={node => (this.image = node)}
+            ref={(node) => (this.image = node)}
           />
         </div>
         <div className="home__caret">

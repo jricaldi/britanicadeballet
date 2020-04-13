@@ -1,8 +1,9 @@
-import React from 'react';
-import './header.scss';
+import React from "react";
+import { observer } from "mobx-react";
+import "./header.scss";
 
-const Header = ({ children, ...props }) => <header { ...props }>
-  { children }
-</header>;
+const Header = ({ children, ...props }) => (
+  <header {...props}>{children}</header>
+);
 
-export default Header;
+export default observer(Header);

@@ -1,10 +1,12 @@
 import React from "react";
 import cn from "classnames";
+import { observer } from "mobx-react";
 import renderHTML from "react-render-html";
-import "./section.scss";
 import consultButton from "../../images/write-icon.svg";
 
-const renderDialogOpenButton = openMessageDialog => (
+import "./section.scss";
+
+const renderDialogOpenButton = (openMessageDialog) => (
   <button
     className="section__details__consultButton"
     onClick={openMessageDialog}
@@ -13,14 +15,14 @@ const renderDialogOpenButton = openMessageDialog => (
   </button>
 );
 
-const renderTime = time => {
+const renderTime = (time) => {
   if (typeof time === "string") {
     return <div>{time}</div>;
   }
   return time.map((t, index) => <div key={index}>{t}</div>);
 };
 
-const renderData = details => {
+const renderData = (details) => {
   if (typeof details === "string") {
     return renderHTML(details);
   }
@@ -32,27 +34,14 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
   return (
     <article className="section" id={info.scrollId}>
       <div className="section__image">
-        <img
-          src={info.image}
-          alt={info.name}
-          data-aos="zoom-in"
-          data-aos-once
-        />
+        <img src={info.image} alt={info.name} data-aos="fade-up" />
       </div>
       <div className={cn("section__info", backgroundSection)}>
-        <span
-          className="section__info__name"
-          data-aos="zoom-out-right"
-          data-aos-once
-        >
+        <span className="section__info__name" data-aos="zoom-out-right">
           {info.name}
         </span>
         {info.extraName && (
-          <span
-            className="section__info__surname"
-            data-aos="zoom-out-right"
-            data-aos-once
-          >
+          <span className="section__info__surname" data-aos="zoom-out-right">
             {info.extraName}
           </span>
         )}
@@ -60,7 +49,7 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
       <div className={cn("section__details", backgroundSection)}>
         <div
           className={cn("section__details__info", {
-            noColunmsText: info.noColunmsText
+            noColunmsText: info.noColunmsText,
           })}
         >
           {renderData(info.details)}
@@ -76,7 +65,7 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
           </div>
         )}
         {info.showSchedules &&
-          info.schedules.map(schedule => (
+          info.schedules.map((schedule) => (
             <div key={schedule.name} className="section__horarios__single">
               <div className="section__horarios__single__name">
                 <div>{renderData(schedule.name)}</div>
@@ -93,4 +82,4 @@ const Section = ({ info, isClassSection, openMessageDialog }) => {
   );
 };
 
-export default Section;
+export default observer(Section);

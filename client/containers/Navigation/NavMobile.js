@@ -1,12 +1,14 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import Scroll from "react-scroll";
+import { observer } from "mobx-react";
 import $ from "jquery";
 import logo from "../../images/logo.png";
 import "./navMobile.scss";
 
 const Slink = Scroll.Link;
 
-export default class NavMobile extends PureComponent {
+@observer
+export default class NavMobile extends Component {
   showMobileNav = () => {
     $(this.mainNav).fadeToggle(500);
     $(this.topMenu).toggleClass("top-animate");
@@ -21,7 +23,7 @@ export default class NavMobile extends PureComponent {
           <img src={logo} alt="Británica de ballet" />
         </Slink>
         <nav role="navigation">
-          <ul className="navMobile__menu" ref={node => (this.mainNav = node)}>
+          <ul className="navMobile__menu" ref={(node) => (this.mainNav = node)}>
             <li>
               <Slink
                 to="id-clases-en-linea"
@@ -91,15 +93,15 @@ export default class NavMobile extends PureComponent {
             <a className="navMobile__action__icon">
               <div
                 className="menui top-menu"
-                ref={node => (this.topMenu = node)}
+                ref={(node) => (this.topMenu = node)}
               />
               <div
                 className="menui mid-menu"
-                ref={node => (this.midMenu = node)}
+                ref={(node) => (this.midMenu = node)}
               />
               <div
                 className="menui bottom-menu"
-                ref={node => (this.bottomMenu = node)}
+                ref={(node) => (this.bottomMenu = node)}
               />
             </a>
           </div>

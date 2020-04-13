@@ -1,8 +1,10 @@
-import React from 'react';
-import SectionList from '../../components/Section/SectionList';
-import { dataProfesoras } from '../../helpers/database';
+import React from "react";
+import { observer } from "mobx-react";
+import SectionList from "../../components/Section/SectionList";
+import { dataProfesoras } from "../../helpers/database";
 
-const ListaProfesoras = () => <SectionList scrollId="id-profesoras"
-                                dataList={ dataProfesoras } />;
+const ListaProfesoras = () => (
+  <SectionList scrollId="id-profesoras" dataList={dataProfesoras} />
+);
 
-export default ListaProfesoras;
+export default observer(ListaProfesoras);
