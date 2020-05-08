@@ -28,7 +28,7 @@ export const dataProfesoras = [
       },
       {
         name: "Adolescentes & Adultas principiantes",
-        time: ["Lunes y Miércoles 7:00pm - 8:00pm", "Sabados 12:00pm - 1:30pm"],
+        time: ["Lunes y Miércoles 7:00pm - 8:00pm"],
       },
     ],
   },
@@ -69,14 +69,6 @@ export const dataProfesoras = [
       {
         name: "6 & 7 años",
         time: "Lunes y Miércoles 4:30pm - 5:30pm",
-      },
-      {
-        name: "5 & 6 años",
-        time: "Sábados 10:00am - 11:00am",
-      },
-      {
-        name: "3 & 4 años",
-        time: "Sábados 11:00am - 12:00pm",
       },
     ],
   },
@@ -149,14 +141,6 @@ export const dataClases = [
           "3:45pm - 4:30pm (3 años)",
           "4:30pm - 5:30pm (5 años)",
           "5:30pm - 6:30pm (8 - 11 años)",
-        ],
-      },
-      {
-        name: "Sábados",
-        time: [
-          "10:00am - 11:00am (5 & 6 años)",
-          "11:00am - 12:00pm (3 & 4 años)",
-          "12:00pm - 1:30pm (Adolescentes y Adultas principiantes)",
         ],
       },
     ],
