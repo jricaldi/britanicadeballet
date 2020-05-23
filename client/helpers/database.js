@@ -100,7 +100,10 @@ export const dataClases = [
         <a href="https://zoom.us" target="_blank">
           zoom
         </a>
-        . Somos miembros de la agencia de servicios online Lima Lista.
+        . Somos miembros de la agencia de servicios online&nbsp;
+        <a href="https://www.limalista.com" target="_blank">
+          Lima Lista.
+        </a>
       </>
     ),
     noColunmsText: true,
